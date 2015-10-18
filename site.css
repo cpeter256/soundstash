@@ -1,0 +1,22 @@
+body {
+    background-color: #14283C;
+    color: #D0D4D8;
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    padding: 1px;
+}
+
+h1 {
+    border-bottom: 3px solid #A6AAAD;
+    font-family: 'Merriweather', serif;
+    font-size: 48px;
+    padding: 2px;
+    text-align: center;
+}
+
+table {
+    background-color : #283D55;
+    border: 3px double #A6AAAD;
+    margin: 0px auto 0px auto;
+    text-align: center;
+}
