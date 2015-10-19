@@ -15,8 +15,16 @@ h1 {
 }
 
 table {
-    background-color : #283D55;
+    background-color: #283D55;
     border: 3px double #A6AAAD;
     margin: 0px auto 0px auto;
     text-align: center;
+}
+
+td {
+    background-color: #203144;
+}
+
+a {
+    color: #FFFFFF;
 }
