@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogue>
+  <sound>
+    <artists>
+      <artist>Rod Stewart</artist>
+    </artists>
+    <title>Maggie May</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=7T5hYlUsQ0s</uri>
+      <alts>
+        <uri>https://www.youtube.com/watch?v=ZY5eTP6fCmA</uri>
+      </alts>
+    </uris>
+  </sound>
+  <sound>
+    <artists>
+      <artist>The Police</artist>
+    </artists>
+    <title>Roxanne</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=3T1c7GkzRQQ</uri>
+    </uris>
+  </sound>
+  <sound>
+    <artists>
+      <artist>Toto</artist>
+    </artists>
+    <title>Rosanna</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=K2O9ryz7Eik</uri>
+    </uris>
+  </sound>
+  <sound>
+    <!-- one song version, multiple albums -->
+    <album></album>
+    <artists>
+      <artist>The Doors</artist>
+    </artists>
+    <title>Gloria</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=eQUsW297gVE</uri>
+    </uris>
+  </sound>
+  <sound>
+    <album>Frozen Niagra Falls</album>
+    <artists>
+      <artist>Prurient</artist>
+    </artists>
+    <title>Myth of Building Bridges</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=0lXEQdkOqJk</uri>
+    </uris>
+  </sound>
+  <sound>
+    <album>Pulse Demon</album>
+    <artists>
+      <artist>Merzbow</artist>
+    </artists>
+    <!-- TODO this is actually 2 songs -->
+    <title>My Station Rock</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=K2O9ryz7Eik</uri>
+    </uris>
+  </sound>
+  <sound>
+    <artists>
+      <artist>Fetty Wap</artist>
+      <featuring>
+        <artist>Drake</artist>
+      </featuring>
+    </artists>
+    <title>Come My Way</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=Cvu0Q4Cl7pU</uri>
+    </uris>
+  </sound>
+  <sound>
+    <album>Amplifier Worship</album>
+    <artists>
+      <artist>https://www.youtube.com/watch?v=SBwK2s734DQ</artist>
+    </artists>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=SBwK2s734DQ</uri>
+    </uris>
+  </sound>
+  <sound>
+    <artists>
+      <artist>David Guetta</artist>
+      <featuring>
+        <!-- are featured artists are supposed to be listed in a particular order? do we preserve it-->
+        <artist>Nicki Minaj</artist>
+        <artist>Bebe Rexha</artist>
+        <artist>Afrojack</artist>
+      </featuring>
+    </artists>
+    <title>Hey Mama</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=uO59tfQ2TbA</uri>
+    </uris>
+  </sound>
+  <sound>
+    <album>Immortal</album>
+    <artists>
+      <artist>BlackGryph0n</artist>
+      <artist>Baasik</artist>
+      <featuring>
+        <artist>Michelle Creber</artist>
+      </featuring>
+    </artists>
+    <title>Zero Gravity</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=LEnxIbwlNG8</uri>
+    </uris>
+  </sound>
+  <sound>
+    <artists>
+      <!-- TODO handle arr. -->
+      <artist>Mimori Suzuko</artist>
+    </artists>
+    <title>Mirai Start</title>
+    <uris>
+      <uri>https://deltabrony.bandcamp.com/track/mirai-start-pony-revolution-mix</uri>
+    </uris>
+  </sound>
+  <sound>
+    <album>Startlit Flames</album>
+    <artists>
+      <artist>Ryazan</artist>
+      <featuring>
+        <artist>ヒロモト</artist>
+      </featuring>
+    </artists>
+    <title>Open My Heart</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=vhj5Qze00sQ</uri>
+    </uris>
+  </sound>
+  <sound>
+    <artists>
+      <artist>Vylet Pony</artist>
+    </artists>
+    <title>Kapow!</title>
+    <uris>
+      <uri>https://soundcloud.com/da5h-records/kapow</uri>
+    </uris>
+  </sound>
+  <sound>
+    <!-- TODO remix. see https://github.com/cpeter256/soundstash/issues/1#issuecomment-149376828 -->
+    <artists>
+      <artist>Foozogz</artist>
+    </artists>
+    <title>HEARTS♥RMX</title>
+    <uris>
+      <uri>https://eqbeats.org/track/7189</uri>
+    </uris>
+  </sound>
+  <sound>
+    <album>Bass Rocket EP</album>
+    <artists>
+      <artist>Silva Hound</artist>
+      <featuring>
+        <artist>Rina-chan</artist>
+      </featuring>
+    </artists>
+    <title>Hooves Up High</title>
+    <uris>
+      <uri>https://pony.fm/tracks/3516-hooves-up-high-ft-rina-chan</uri>
+    </uris>
+  </sound>
+<!--
+  <sound>
+    <album></album>
+    <artists>
+      <artist></artist>
+      <artist></artist>
+      <featuring>
+        <artist></artist>
+      </featuring>
+    </artists>
+    <title></title>
+    <uris>
+      <uri></uri>
+      <alts>
+        <uri></uri>
+        <uri></uri>
+      </alts>
+    </uris>
+  </sound>
+-->
+</catalogue>
