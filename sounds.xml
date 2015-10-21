@@ -167,6 +167,56 @@
       <uri>https://pony.fm/tracks/3516-hooves-up-high-ft-rina-chan</uri>
     </uris>
   </sound>
+  <sound>
+    <album>Meliora</album>
+    <artists>
+      <artist>Ghost</artist>
+    </artists>
+    <title>Spirit HQ</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=DEwk1ZEnBWE</uri>
+    </uris>
+  </sound>
+    <sound>
+    <album>Meliora</album>
+    <artists>
+      <artist>Ghost</artist>
+    </artists>
+    <title>Cirice</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=-0Ao4t_fe0I</uri>
+    </uris>
+  </sound>
+    <sound>
+    <album>Meliora</album>
+    <artists>
+      <artist>Ghost</artist>
+    </artists>
+    <title>Majesty</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=qS5-QmkKzJQ</uri>
+    </uris>
+  </sound>
+    <sound>
+    <album>Infestissumam</album>
+    <artists>
+      <artist>Ghost</artist>
+    </artists>
+    <title>Secular Haze</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=vyQZ13jobIY</uri>
+    </uris>
+  </sound>
+    <sound>
+    <album>Infestissumam</album>
+    <artists>
+      <artist>Ghost</artist>
+    </artists>
+    <title>Year Zero</title>
+    <uris>
+      <uri>https://www.youtube.com/watch?v=_Mbxe33BYW8</uri>
+    </uris>
+  </sound>
 <!--
   <sound>
     <album></album>
