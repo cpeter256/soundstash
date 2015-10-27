@@ -1,0 +1,64 @@
+Sound Stash - The Latecomers - Release Plan
+
+Justin Ewing
+Graham Culver
+Colin Peter
+Jyotsna Prakash
+Rene Isais
+
+Release 12.1.15-0.1-10.26.15
+
+High Level Goals: 
+At the end of sprint 3, we wish to have a functioning web-based music aggregation service. This service will let users be able to source music from around the internet, from such places as YouTube, Band Camp, Sound Cloud, etc- into a single place that will have familiar functionality to any other popular music service. The difference being that instead of us, Sound Cloud, storing the music collection of the user, we will only store and play links from other sources. Our UI (User Interface) will have a similiar appearance and functionality to most other high-level music services, with functions such as a music library,playlists, embedded music player. Our goals are listed in priority order as follows--
+
+Extensive and accurate documentation.
+Be able to have a basic website running on a local server.
+Have an intuitive UI connected to a lightweight backend.
+Using an extensible and modular framework for quick development.
+Be able to have customizable user accounts 
+Have an embedded player for each users unique libraries
+Be able to handle multiple service requests from different users.
+Manage a database dynamically, based on load from user requests.
+Be able to set up and deploy changes to the web service quickly.
+Automate testing of site functions for incremental releases.
+
+User Stories for Release:
+Sprint 1: Aggregator (non-customizable)
+As a developer, I want to easily test my service with static links (2)
+As a user, I want to be able to link to the original source  (2)
+As a user, I want my web browser to access Sound Stash  (3)
+Sprint 2: Aggregator (customizable)
+Personal Account User Story
+As a user I want to be able to create an account (login/create page for unlogged-in users) (5)
+As a  user I want to be log in & have persistent log in (5)
+As a user I want to be able to update my password & email address (3)
+As an administrator I want to be able to administrate the user accounts (3)
+As a user I want to be able to delete my account (2)
+As an administrator I want to be able to reset passwords upon request (2)
+As an administrator I want to be able to view username & email (2)
+As an administrator I want to be able to delete accounts (2)
+
+Adding Music
+As a logged-in user, I want to be able to add music from URL sources (5)
+As a logged-in user, I want to be able to change metadata of added songs (3)
+As a logged-in user, I want to be able to follow links to access the music (2)
+
+Organize Library
+As a logged-in user, I want to be able to sort by metadata (3)
+As a logged-in user, I want to be able to sort by in-order albums (3)
+
+Search Library
+As a logged-in user, I want to be able to search by metadata for songs (5)
+Sprint 3: Aggregator w/ music player features
+As a developer, I’d like an embedded player (8)
+As a user, I’d like to have continuous playback of my library/playlists (5)
+As a user, I’d like to play/pause/shuffle/repeat without leaving Sound Stash (5)
+
+
+Product Backlog: 
+    As a user, be able to upload music from personal collection to Sound Stash
+    As a user, be able to manage more forms of media (Video, podcasts, pictures?)
+    As a developer, be able to deploy to a professional hosting service
+	
+
+
