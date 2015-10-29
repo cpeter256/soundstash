@@ -1,0 +1,40 @@
+Sound Stash - The Latecomers - Sprint 1 Plan
+
+Justin Ewing
+Graham Culver
+Colin Peter
+Jyotsna Prakash
+Rene Isais
+
+Release 10.21.15-0.1-10.26.15
+
+Goal: The goal of this sprint was to put together the skeleton of our service and further define, conceptually, what we wanted our service to have. This included getting a local server set up, having a basic html website with static links, and having a small dataset of links to music for internal verification.
+
+Task Listing:
+Sprint 1: Aggregator (non-customizable)
+As a developer, I want to easily test my service with static links (2)                                                    task 1: css design {1.5 hour}                                                                                                      task 2: html table {0.5 hour}                                                                                                                          task 3: XML table of static links {2 hours}
+As a user, I want to be able to link to the original source  (2)                                                                               task 1:  Populating HTML table with XML data {1 hour}              
+As a user, I want my web browser to access Sound Stash  (3)                                                                     task 1: Setting up a local server (Django) {3-4 hours}
+
+Total Time Estimates - 10-11 hours
+
+
+Team Roles:
+Justin Ewing - django code
+Graham Culver - HTML 
+Colin Peter - CSS design
+Jyotsna Prakash - generating  XML data
+Rene Isais - javascript
+
+Initial Task Assignment:
+Justin Ewing - Setting up a local server
+Graham Culver - HTML 
+Colin Peter - CSS design
+Jyotsna Prakash - generating  XML data
+Rene Isais - javascript
+
+SCRUM Meetings
+Tu  6:15-6:30
+Th 12-12:15
+Fri 12:10-12:25
+

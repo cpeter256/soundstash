@@ -1,0 +1,63 @@
+Sound Stash - The Latecomers - Sprint 2 Plan
+
+
+Justin Ewing
+Graham Culver
+Colin Peter
+Jyotsna Prakash
+Rene Isais
+
+Goal:
+
+Personal Account User Story
+As a user I want to be able to create an account (login/create page for unlogged-in users
+As a  user I want to be log in & have persistent log in
+As a user I want to be able to update my password & email address
+As an administrator I want to be able to administrate the user accounts
+As a user I want to be able to delete my account
+As an administrator I want to be able to reset passwords upon request
+As an administrator I want to be able to view username & email
+As an administrator I want to be able to delete accounts
+
+Adding Music
+As a logged-in user, I want to be able to add music from URL sources
+As a logged-in user, I want to be able to change metadata of added songs
+As a logged-in user, I want to be able to follow links to access the music
+
+Organize Library
+As a logged-in user, I want to be able to sort by metadata
+As a logged-in user, I want to be able to sort by in-order albums
+
+Search Library
+As a logged-in user, I want to be able to search by metadata for songs
+
+	Front end:
+		task 1: Create Login Page (2)
+		task 2: Registration Page (2)
+		task 3: Placeholder Library Page (1)
+		task 4: Sending user data to the server (3)
+		task 5: Validate password strength (2)
+		task 6: Validate all fields are filled (1)
+		task 7: Adding cookie to user browser (3)
+		task 8: CSS Site-wide style sheet (5)
+		
+	Back end:
+		task 1: Account Structure (2)
+		task 2: Password Authentication (2)
+		task 3: Email Validation (2)
+		task 4: User account storage (3)
+		task 5: Account management
+		
+
+Team Roles:
+Justin Ewing - Back end
+Graham Culver - Assist?
+Colin Peter - Front end
+Jyotsna Prakash - Back end
+Rene Isais - Front end
+
+Initial Task Assignment:
+Justin Ewing - Account Structure
+Graham Culver -  Sending user data to the server
+Colin Peter - Log in page
+Jyotsna Prakash - User account storage

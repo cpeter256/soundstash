@@ -1,0 +1,26 @@
+Sound Stash - The Latecomers - Sprint 1 Review
+
+Justin Ewing
+Graham Culver
+Colin Peter
+Jyotsna Prakash
+Rene Isais
+
+Release 10.21.15-0.1-10.26.15
+
+Postmortem:
+Justin was able to setup a personal django server to serve as the basis of the Sprint 2 iteration
+Graham created the index.html & site.css files located in the soundstash github to serve as a proof of concept
+Jyotsna created sounds.xml and recorded everyone's 5 song submission to serve as the placeholder data store
+Colin & Rene contributed to the planning of the project and independently researched pertinent technologies
+Everyone worked together to create the Scrum board, agree upon an acceptable UI scheme, and perform detailed design
+
+Retrospective:
+Not all the tasks we set out to complete were performed, due to an initial discrepency in expectations and a general
+hesitation with regard to how the project should be carried out. This may have been the result of not formally having
+a group until well into the first sprint and not having a Scrum board until a week after that. Individually and collectively
+we have decided to ramp up efforts for Sprints 2 & 3 to ensure the final product we present at the end of this quarter
+full reflects our own expectations and capabilities.
+
+Burnup Chart:
+http://i.imgur.com/BGEz4Xr.png
