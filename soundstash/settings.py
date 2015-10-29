@@ -25,7 +25,8 @@ SECRET_KEY = 'gh55w-ltp5(u5tacsb!v33=sisl=0mxsb7a9njp6i+7y%8y&k#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1'
+                 'index', 'index.html']
 
 
 # Application definition
@@ -37,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'index'
 )
 
 MIDDLEWARE_CLASSES = (
