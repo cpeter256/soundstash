@@ -23,10 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'gh55w-ltp5(u5tacsb!v33=sisl=0mxsb7a9njp6i+7y%8y&k#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1'
-                 'index', 'index.html']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'index'
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,7 +56,8 @@ ROOT_URLCONF = 'soundstash.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+         'html'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
