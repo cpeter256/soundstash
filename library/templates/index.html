@@ -10,9 +10,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="{% static "library.js" %}"></script>
 </head>
 
-<body>
+<body onload=loadSongs()>
   <div class="container-fluid" style="background-color:DarkSlateGray;color:White;">
     <!-- Header -->
     <div class="row">
@@ -37,11 +38,6 @@
         </div>
       </div>
       <div class="col-sm-2"></div>
-    </div>
-    <div class="hidden">
-      <tr id="dummy-elem">
-        <td></td> <td></td>
-      </tr>
     </div>
   </div>
 </body>
