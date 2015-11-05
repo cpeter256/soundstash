@@ -1,8 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render_to_response
 from django.http import HttpResponse
 
 def index(request):
-	template = loader.get_template('registration/index.html')
-	return HttpRsponse(template)
+	return HttpResponse('registration/static/registration/index.html')
 
 # Create your views here.
