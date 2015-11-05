@@ -1,34 +1,23 @@
-body {
-    background-color: #14283C;
-    color: #D0D4D8;
-    font-family: 'Georgia', serif;
-    font-size: 15px;
+html, body {
+  height:100%;
 }
 
-h1 {
-    border-bottom: 3px solid #A6AAAD;
-    font-family: 'Merriweather', serif;
-    font-size: 50px;
-    text-align: center;
+.container-fluid {
+  height:100%;
 }
 
-table {
-    background-color: #283D55;
-    border: 3px double #A6AAAD;
-    margin: 0px auto;
-    text-align: center;
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-th {
-    font-size: 24px;
-    text-shadow: 4px 2px #203144;
-}
+.table-striped>tbody>tr:nth-child(even)>td, 
+.table-striped>tbody>tr:nth-child(even)>th {
+   background-color: #EEE;
+ }
 
 td {
-    background-color: #203144;
-    padding: 15px;
-}
-
-a {
-    color: #FFFFFF;
+  color: #445;
 }

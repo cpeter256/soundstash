@@ -1,96 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>SoundStash</title>
-    {% load staticfiles %}
-    <link href="{% static "site.css" %}" rel="stylesheet">
-    <meta charset="UTF-8">
+  <title>SS Library</title>
+  {% load staticfiles %}
+  <link href="{% static "site.css" %}" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name ="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <h1>SoundStash</h1>    
-    <!-- main table -->
-    <table>
-        <thead>
-            <tr>
-                <th>Artist</th>
-                <th>Album</th>
-                <th>Song</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td rowspan="5">Ghost (<a href="https://en.wikipedia.org/wiki/Ghost_(Swedish_band)">wiki</a>)</td>
-                <td rowspan="3">Meliora (<a href="https://youtu.be/CzzkemzfdfU">yt</a>)</td>
-                <td>Spirit (<a href="https://youtu.be/DEwk1ZEnBWE">yt</a>)</td>
-            </tr>
-            <tr>
-                <!-- td Ghost /td -->
-                <!-- td Meliora /td -->
-                <td>Cirice (<a href="https://youtu.be/-0Ao4t_fe0I">yt</a>)</td>
-            </tr>
-            <tr>
-                <!-- td Ghost /td -->
-                <!-- td Meliora /td -->
-                <td>Majesty (<a href="https://youtu.be/qS5-QmkKzJQ">yt</a>)</td>
-            </tr>
-            <tr>
-                <!-- td Ghost /td -->
-                <td rowspan="2">Infestissumam</td>
-                <td>Secular Haze (<a href="https://youtu.be/vyQZ13jobIY">yt</a>)</td>
-            </tr>
-            <tr>
-                <!-- td Ghost /td -->
-                <!-- td Infestissumam /td -->
-                <td>Year Zero (<a href="https://youtu.be/_Mbxe33BYW8">yt</a>)</td>
-            </tr>
-            <!-- -->
-            <tr>
-                <td colspan="2">Rod Stewart</td>
-                <td>Maggie May (<a href="https://www.youtube.com/watch?v=7T5hYlUsQ0s">yt</a>)</td>
-            </tr>
-            <tr>
-                <td colspan="2">The Police</td>
-                <td>Roxanne (<a href="https://www.youtube.com/watch?v=3T1c7GkzRQQ">yt</a>)</td>
-            </tr>
-            <tr>
-                <td colspan="2">The Doors</td>
-                <td>Gloria (<a href="https://www.youtube.com/watch?v=eQUsW297gVE">yt</a>)</td>
-            </tr>
-            <tr>
-                <td>Prurient</td>
-                <td>Frozen Niagra Falls</td>
-                <td>Myth of Building Bridges (<a href="https://www.youtube.com/watch?v=0lXEQdkOqJk">yt</a>)</td>
-            </tr>
-            <tr>
-                <td>Merzbow</td>
-                <td>Pule Demon</td>
-                <td>My Station Rock (<a href="https://www.youtube.com/watch?v=K2O9ryz7Eik">yt</a>)</td>
-            </tr>
-            <tr>
-                <td colspan="2">David Guetta<br>
-                w/ Nicki Minaj,</br>
-                Bebe Rexha,</br>
-                & Afrojack</td>
-                <td>Hey Mama (<a href="https://www.youtube.com/watch?v=uO59tfQ2TbA">yt</a>)</td>
-            </tr>
-            <tr>
-                <td colspan="2">Velvet Pony</td>
-                <td>Kapow! (<a href="https://soundcloud.com/da5h-records/kapow">sc</a>)</td>
-            </tr>
-            <tr>
-                <td colspan="2">Ryazan<br>feat. ヒロモト</td>
-                <td>Open My Heart from Starlit Flames (<a href="https://www.youtube.com/watch?v=vhj5Qze00sQ">yt</a>)</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-        </tfoot>
-    </table>
-    <!-- additional content -->
-</body>    
+  <div class="container-fluid" style="background-color:DarkSlateGray;color:White;">
+    <!-- Header -->
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1>SoundStash</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <!-- Library table -->
+        <div class="table-responsive">
+          <table class="table table-striped table-condensed" id="lib-table">
+            <thead>
+              <tr>
+                <th>Title</th> <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+    <div class="hidden">
+      <tr id="dummy-elem">
+        <td></td> <td></td>
+      </tr>
+    </div>
+  </div>
+</body>
 
 </html>
