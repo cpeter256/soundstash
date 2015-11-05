@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from index import views
 
 urlpatterns = [
+<<<<<<< HEAD
     url(r'^library_json/', include('library_json.urls')), 
+=======
+    url(r'^$', views.index, name='index'),
+>>>>>>> 87aa82c6e850f74b8b2fa759315de8c323c84e5c
     url(r'^admin/', include(admin.site.urls)),
 ]
