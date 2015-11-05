@@ -17,5 +17,6 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    url(r'^library_json/', include('library_json.urls')), 
     url(r'^admin/', include(admin.site.urls)),
 ]
