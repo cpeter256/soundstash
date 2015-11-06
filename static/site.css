@@ -2,6 +2,39 @@ html, body {
   height:100%;
 }
 
+body {
+  padding-top: 50px;
+}
+
+#lib-control {
+  margin: 10px 5px;
+}
+
+#lib-control .disabled {
+  cursor: auto;
+}
+
+#lib-control .glyphicon-chevron-down {
+  padding-left: 3px;
+}
+
+#lib-search {
+  margin: 10px 5px;
+  max-width: 210px;
+}
+
+#user-account-btn {
+  margin: 10px 5px;
+}
+
+#user-account-btn ul li {
+  cursor: pointer;
+}
+
+#user-account-btn .glyphicon-user {
+  padding-right: 3px;
+}
+
 .container-fluid {
   height:100%;
 }
@@ -11,6 +44,10 @@ html, body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+.table-responsive {
+  padding-top: 10px;
 }
 
 .table-striped>tbody>tr:nth-child(even)>td, 
