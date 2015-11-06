@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 function loadSongs() {
 	var songreq = new XMLHttpRequest();
@@ -17,5 +17,20 @@ function loadSongs() {
 }
 
 function addSongs(songs) {
-	console.log(songs);
+	var table = document.getElementById("lib-table");
+	var tbody = table.getElementsByTagName("tbody")[0];
+	for (var si in songs) {
+		var song = songs[si];
+		console.log(tbody);
+		var row = document.createElement("tr");
+			var titledata = document.createElement("td");
+				titledata.innerHTML = song.title;
+			row.appendChild(titledata);
+			var urldata = document.createElement("td");
+				urldata.innerHTML = song.url;
+			row.appendChild(urldata);
+		
+		tbody.appendChild(row);
+	}
+	//console.log(songs);
 }
