@@ -52,9 +52,13 @@ body {
 
 .table-striped>tbody>tr:nth-child(even)>td, 
 .table-striped>tbody>tr:nth-child(even)>th {
-   background-color: #EEE;
+  background-color: #EEE;
  }
 
-td {
+#lib-table th {
+  text-align: center;
+}
+
+#lib-table td {
   color: #445;
 }
