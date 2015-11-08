@@ -37,11 +37,16 @@
                   <button type="button" class="btn btn-default disabled">
                     Sort<strong> : </strong>
                   </button>
-                  <button type="button" class="btn btn-default" id="sort-title-btn">
+                  <button type="button" class="btn btn-default" id="sort-title-btn" onclick=toggleSortTitle()>
                     Title
-                    <span class="glyphicon glyphicon-chevron-down"></span>
+                    <span id="titlesort-chev-down" style="display:none" class="glyphicon glyphicon-chevron-down"></span>
+                    <span id="titlesort-chev-up" style="display:none" class="glyphicon glyphicon-chevron-up"></span>
                   </button>
-                  <button type="button" class="btn btn-default" id="sort-artist-btn">Url</button>
+                  <button type="button" class="btn btn-default" id="sort-artist-btn" onclick=toggleSortArtist()>
+                    Url
+                    <span id="artistsort-chev-down" style="display:none" class="glyphicon glyphicon-chevron-down"></span>
+                    <span id="artistsort-chev-up" style="display:none" class="glyphicon glyphicon-chevron-up"></span>
+                  </button>
                 </div><!-- end Nav Controls -->
               </li>
               <li><!-- Search -->
