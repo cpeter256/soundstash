@@ -118,6 +118,30 @@ function loadSongs() {
 	songreq.send();
 }
 
+function doSearch() {
+	var searchfield = document.getElementById("lib-search-field");
+	var searchtext = searchfield.value;
+	var tbody = document.getElementById("lib-table").getElementsByTagName("tbody")[0];
+	
+	for (var r = 0; r < tbody.rows.length; r++) {
+		var found = false;
+		var row = tbody.rows[r];
+		for (var c = 0; c < row.children.length; c++) {
+			//console.log(row.children[c]);
+			var text = row.children[c].innerHTML;
+			if (text.toUpperCase().indexOf(searchtext.toUpperCase()) != -1) {
+				found = true;
+				break;
+			}
+		}
+		if (found) {
+			row.style.display = "";
+		} else {
+			row.style.display = "none";
+		}
+	}
+}
+
 function addSongs(songs) {
 	var table = document.getElementById("lib-table");
 	var tbody = table.getElementsByTagName("tbody")[0];
