@@ -1,5 +1,6 @@
 html, body {
   height:100%;
+  background-color: DarkSlateGray;
 }
 
 body {
@@ -12,10 +13,6 @@ body {
 
 #lib-control .disabled {
   cursor: auto;
-}
-
-#lib-control .glyphicon-chevron-down {
-  padding-left: 3px;
 }
 
 #lib-search {
@@ -53,9 +50,10 @@ body {
 .table-striped>tbody>tr:nth-child(even)>td, 
 .table-striped>tbody>tr:nth-child(even)>th {
   background-color: #EEE;
- }
-
+ } 
+ 
 #lib-table th {
+  color: #FFF;
   text-align: center;
 }
 

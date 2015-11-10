@@ -24,6 +24,7 @@ function make_testjson() {
 		var tests = {};
 		tests.title = bullshit();
 		tests.url = bullshit();
+    tests.artist = bullshit();
 		test.push(tests);
 	}
 	console.log(JSON.stringify(test));
@@ -118,6 +119,12 @@ function loadSongs() {
 	songreq.send();
 }
 
+function searchIfSpace(e) {
+  if(e.keyCode === 13) {
+    doSearch();
+  }
+}
+
 function doSearch() {
 	var searchfield = document.getElementById("lib-search-field");
 	var searchtext = searchfield.value;
@@ -147,16 +154,22 @@ function addSongs(songs) {
 	var tbody = table.getElementsByTagName("tbody")[0];
 	for (var si in songs) {
 		var song = songs[si];
-		//console.log(tbody);
-		var row = document.createElement("tr");
-			var titledata = document.createElement("td");
-				titledata.innerHTML = song.title;
-			row.appendChild(titledata);
-			var urldata = document.createElement("td");
-				urldata.innerHTML = song.url;
-			row.appendChild(urldata);
-		
-		tbody.appendChild(row);
+    tbody.appendChild(addSongHTML(song));
 	}
 	//console.log(songs);
 }
+
+function addSongHTML(song) {
+  var row = document.createElement("tr");
+  var title = document.createElement("td");
+  var url = document.createElement("a");
+  var artist = document.createElement("td");
+  url.href = song.url;
+  url.innerHTML = song.title;
+  artist.innerHTML = song.artist;
+  title.appendChild(url);
+  row.appendChild(title);
+  row.appendChild(artist);
+  return row;
+}
+

@@ -43,7 +43,7 @@
                     <span id="titlesort-chev-up" style="display:none" class="glyphicon glyphicon-chevron-up"></span>
                   </button>
                   <button type="button" class="btn btn-default" id="sort-artist-btn" onclick=toggleSortArtist()>
-                    Url
+                    Artist
                     <span id="artistsort-chev-down" style="display:none" class="glyphicon glyphicon-chevron-down"></span>
                     <span id="artistsort-chev-up" style="display:none" class="glyphicon glyphicon-chevron-up"></span>
                   </button>
@@ -51,7 +51,7 @@
               </li>
               <li><!-- Search -->
                 <div class="input-group input-group-sm m-y" id="lib-search"><!-- Nav Search -->
-                  <input type="text" class="form-control" placeholder="Search" id="lib-search-field">
+                  <input type="text" class="form-control" placeholder="Search" onkeypress=searchIfSpace(event) id="lib-search-field">
                   <span class="input-group-btn">
                     <button class="btn btn-default" type="button" id="lib-search-btn" onclick=doSearch()>
                       <span class="glyphicon glyphicon-search"></span>
@@ -78,7 +78,7 @@
       </div>
     </div>
   </nav><!-- end Navbar -->
-  <div class="container-fluid" style="background-color:DarkSlateGray;color:White;"><!-- Library -->
+  <div class="container-fluid"><!-- Library -->
     <div class="row">
       <div class="col-xs-2 col-md-4"></div>
       <div class="col-xs-8 col-md-4 text-center">
@@ -89,8 +89,10 @@
                 <th>Title</th> <th>Artist</th>
               </tr>
             </thead>
-            <tbody>
-            </tbody>
+            <div class="scrollbar">
+              <tbody>
+              </tbody>
+            </div>
           </table>
         </div><!-- end Library table -->
       </div>
