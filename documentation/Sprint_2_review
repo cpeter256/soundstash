@@ -1,0 +1,14 @@
+Sound Stash - The Latecomers - Sprint 2 Review
+
+Justin Ewing
+Graham Culver
+Colin Peter
+Jyotsna Prakash
+Rene Isais
+
+Postmortem:
+Justin and Jyotsna got a Django server running that currently stores the Library JSON and serves it on request from the 
+client-side. Colin worked on javascript that accesses the JSON that is on the server to populate the library page it or modify it and add songs.Graham and Rene worked together to make the HTML pages have the necessary functionality for an aggregator. 
+
+Retrospective:
+After a conversation with the TA, we decided to pivot and refocus our efforts to one specific part of the project. We went from doing more "user account" related stuff to focusing completely on the library aspect. After this shift, things moved along very swiftly and we have something releasable, although rather bare-bones. Even with the setbacks it is still possible to complete most of what we have in the release plan.
