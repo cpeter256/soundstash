@@ -22,9 +22,9 @@ try:
 	# convert to a dict
     rows = [ dict(rec) for rec in recs ]
 
-    print "DB data as a single JSON string:"
+#    print "DB data as a single JSON string:"
     rows_json = json.dumps(rows)
-    print rows_json
+#    print rows_json
 
 
 except Exception, e:
