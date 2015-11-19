@@ -4,7 +4,7 @@ import sys
 import sqlite3
 import json
 
-f = open("json_data", "w")
+f = open("json_data2", "w")
 
 try:
 
@@ -17,7 +17,7 @@ try:
 
 
     # Now fetch back the inserted data and write it to JSON.
-    curs.execute("SELECT * FROM sound")
+    curs.execute("SELECT * FROM library_Sound")
     recs = curs.fetchall()
 
 	# convert to a dict
