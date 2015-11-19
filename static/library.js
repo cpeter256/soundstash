@@ -95,6 +95,11 @@ function updateSort() {
 	}
 	// sort the array by the specified column number (col) and order (asc)
 	arr.sort(function(a, b){
+		if (col == 0) {
+			var ac = a[col].split(/<|>/)[2];
+			var bc = b[col].split(/<|>/)[2];
+			return (ac == bc) ? 0 : ((ac > bc) ? asc : -1*asc);
+		}
 		return (a[col] == b[col]) ? 0 : ((a[col] > b[col]) ? asc : -1*asc);
 	});
 	for(i = 0; i < rlen; i++){
