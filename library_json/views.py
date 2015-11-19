@@ -27,10 +27,11 @@ try:
 #    print rows_json
 
 
-except Exception, e:
-    print "ERROR: Caught exception: " + repr(e)
+except e:
+    print ("ERROR: Caught exception: %s" % str(e))
     raise e
     sys.exit(1)
+
 
 # EOF
 

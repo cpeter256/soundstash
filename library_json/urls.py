@@ -1,5 +1,6 @@
 from django.conf.urls import url
 
-from . import views
+#import library_json.views
+from library_json.views import libraryView
 
-urlpatterns = [ url(r'^$', views.libraryView, name='libraryView'), ]
+urlpatterns = [ url(r'^$', libraryView, name='libraryView'), ]
