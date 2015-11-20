@@ -7,6 +7,50 @@ var SORT_ARTIST_DEC = 4;
 
 var sortmode = 0;
 
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+//var csrftoken = getCookie('csrftoken');
+
+function post_newsong(dest, title, artist, url) {
+	var csrftoken = getCookie('csrftoken');
+	if (!csrftoken) {
+		console.log("Something went wrong getting the csrf token");
+		return;
+	}
+	
+	var req = new XMLHttpRequest();
+	var params = "csrfmiddlewaretoken="+csrftoken+"&uri="+url+"&artist="+artist+"&title="+title;
+	req.open("POST", dest, true);
+	
+	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	req.setRequestHeader("Content-length", params.length);
+	req.setRequestHeader("Connection", "close");
+	
+	req.onreadystatechange = function(e) {
+		if (req.readyState == XMLHttpRequest.DONE) {
+			if (req.status == 200) {
+				console.log("It worked, probably");
+			} else {
+				console.log("It didn't work (status: "+req.status+")");
+			}
+		}
+	}
+	req.send(params);
+}
+
 function bullshit() {
 	var len = Math.floor(Math.random()*20)+5;
 	var shits = "qwertyuiopasdfghjklzxcvbnm1234567890._";
