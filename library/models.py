@@ -14,7 +14,7 @@ class Sound(models.Model):
     # added_by = models.ForeignKey('User')
 
     def __str__(self):
-        return "%s (%s)" % (self.uri, self.title)
+        return "%s (%s)" % (self.url, self.title)
 
 class Playlist(models.Model):
     """

@@ -8,7 +8,7 @@ def index(request):
     Display main library page with songs
     """
     return render_to_response('index.html')
-
+    
 def add_song(request):
     """
     Add new song to music db by processing POST
@@ -16,10 +16,10 @@ def add_song(request):
     if (request.method == 'POST'):
         form = AddSongForm(request.POST)
         if form.is_valid():
-            uri = form.cleaned_data['uri']
+            url = form.cleaned_data['url']
             title = form.cleaned_data['title']
             artist = form.cleaned_data['artist']
-            Sound(uri, title, artist).save() # TODO can this fail
+            Sound(url, title, artist).save() # TODO can this fail
             return HttpResponseRedirect('/') # TODO tell user that it worked!!
     else:
         form = AddSongForm()
