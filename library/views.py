@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, render
 from .forms import AddSongForm
-from .models import Sound, Playlist, Masterlist
+from .models import Sound, Playlist
 
 def index(request):
     """
@@ -22,12 +22,10 @@ def add_song(request):
             # TODO handle failures
             s = Sound(url=url, title=title, artist=artist)
             s.save()
-            m = Masterlist()
-            m.save()
             p = Playlist.objects.get(owner__username='thelatecomers',
                                      name='default')
-            m.sound.add(s)
-            m.playlist.add(p)
+            p.sound.add(s)
+            p.save()
             return HttpResponseRedirect('/') # TODO tell user that it worked!!
     else:
         form = AddSongForm()
