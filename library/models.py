@@ -29,6 +29,6 @@ class Playlist(models.Model):
 # TODO on-delete behaviour also rename this
 class Masterlist(models.Model):
     sound = models.ManyToManyField(Sound)
-    library = models.ManyToManyField(Playlist)
+    playlist = models.ManyToManyField(Playlist)
     class Meta:
         verbose_name_plural = "Masterlist"
