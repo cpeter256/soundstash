@@ -164,7 +164,7 @@ function loadSongs() {
 			}
 		}
 	};
-	songreq.open("GET", "/library_json/");
+	songreq.open("GET", "library_json/");
 	songreq.send();
 }
 

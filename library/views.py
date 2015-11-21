@@ -4,12 +4,15 @@ from .forms import AddSongForm
 from .models import Sound, Playlist
 
 def index(request):
+    return render_to_response('index.html')
+
+def playlist(request):
     """
-    Display main library page with songs
+    Display "playlist" page with songs
     """
     return render_to_response('index.html')
-    
-def add_song(request):
+
+def add_song(request, playlist='default'):
     """
     Add new song to music db by processing POST
     """
@@ -22,14 +25,15 @@ def add_song(request):
             # TODO handle failures
             s = Sound(url=url, title=title, artist=artist)
             s.save()
+            # TODO handle nonexistant playlist
             p = Playlist.objects.get(owner__username='thelatecomers',
-                                     name='default')
+                                     slug=playlist)
             p.sound.add(s)
             p.save()
-            return HttpResponseRedirect('/') # TODO tell user that it worked!!
+            return HttpResponseRedirect('..') # TODO tell user that it worked!!
     else:
         form = AddSongForm()
+
     return render(request, 'add.html', {
         'form': form,
     })
-
