@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Sound, Playlist
 
-# Register your models here.
+admin.site.register(Sound)
+admin.site.register(Playlist)

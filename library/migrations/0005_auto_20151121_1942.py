@@ -7,15 +7,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('library', '0001_initial'),
+        ('library', '0004_auto_20151121_1941'),
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='user',
-            name='sounds',
-        ),
-        migrations.DeleteModel(
-            name='User',
+        migrations.AlterField(
+            model_name='playlist',
+            name='slug',
+            field=models.SlugField(editable=False),
         ),
     ]
