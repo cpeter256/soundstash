@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'library_json',
     'library',
+    'soundstash',
 )
 
 MIDDLEWARE_CLASSES = (
