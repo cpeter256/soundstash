@@ -1,8 +1,11 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, render
+from django.contrib.auth.decorators import login_required
+
 from .forms import AddSongForm
 from .models import Sound, Playlist
 
+@login_required
 def index(request):
     return render_to_response('index.html')
 
@@ -12,6 +15,7 @@ def playlist(request):
     """
     return render_to_response('index.html')
 
+@login_required
 def add_song(request, playlist='default'):
     """
     Add new song to music db by processing POST
@@ -26,7 +30,7 @@ def add_song(request, playlist='default'):
             s = Sound(url=url, title=title, artist=artist)
             s.save()
             # TODO handle nonexistant playlist
-            p = Playlist.objects.get(owner__username='thelatecomers',
+            p = Playlist.objects.get(owner=request.user,
                                      slug=playlist)
             p.sound.add(s)
             p.save()
