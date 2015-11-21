@@ -1,14 +1,18 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, render
+from django.contrib.auth.decorators import login_required
+
 from .forms import AddSongForm
 from .models import Sound, Playlist
 
+@login_required
 def index(request):
     """
     Display main library page with songs
     """
     return render_to_response('index.html')
-    
+
+@login_required
 def add_song(request):
     """
     Add new song to music db by processing POST
