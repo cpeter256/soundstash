@@ -12,3 +12,7 @@ def login(request):
     else:
         # TODO Handle invalid login
         return render(request, 'login.html')
+
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect('/')
