@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+
 import library.views
 
 urlpatterns = [
     url(r'^library_json/', include('library_json.urls')), 
     url(r'^$', library.views.index, name='index'),
-    url(r'^library/add.html', library.views.add_song),
-    url(r'^library/add/', library.views.add_song),
+    url(r'^library/', include('library.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]
