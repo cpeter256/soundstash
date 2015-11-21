@@ -26,7 +26,7 @@ def add_song(request):
             # TODO handle failures
             s = Sound(url=url, title=title, artist=artist)
             s.save()
-            p = Playlist.objects.get(owner__username='thelatecomers',
+            p = Playlist.objects.get(owner=request.user,
                                      name='default')
             p.sound.add(s)
             p.save()
