@@ -4,11 +4,14 @@ from .forms import AddSongForm
 from .models import Sound, Playlist
 
 def index(request):
+    return render_to_response('index.html')
+
+def playlist(request):
     """
-    Display main library page with songs
+    Display "playlist" page with songs
     """
     return render_to_response('index.html')
-    
+
 def add_song(request):
     """
     Add new song to music db by processing POST
