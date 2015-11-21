@@ -24,7 +24,26 @@ function getCookie(name) {
 }
 //var csrftoken = getCookie('csrftoken');
 
-function post_newsong(dest, title, artist, url) {
+function submit_song() {
+	var urlfield = document.getElementById("Song URL");
+	var titlefield = document.getElementById("Song Title");
+	var artistfield = document.getElementById("Artist");
+	
+	if (urlfield.value != "" &&
+		titlefield.value != "" &&
+		artistfield.value != "") {
+		
+		post_newsong(titlefield.value, artistfield.value, urlfield.value, loadSongs);
+		$("#submit_modal").modal("hide");
+	} else {
+		console.log("Some fields are empty");
+		return;
+	}
+}
+
+function post_newsong(title, artist, url, callback) {
+	var dest = "/library/add/";
+	
 	var csrftoken = getCookie('csrftoken');
 	if (!csrftoken) {
 		console.log("Something went wrong getting the csrf token");
@@ -32,17 +51,19 @@ function post_newsong(dest, title, artist, url) {
 	}
 	
 	var req = new XMLHttpRequest();
-	var params = "csrfmiddlewaretoken="+csrftoken+"&uri="+url+"&artist="+artist+"&title="+title;
+	var params = "uri="+url+"&artist="+artist+"&title="+title;
 	req.open("POST", dest, true);
 	
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	req.setRequestHeader("Content-length", params.length);
 	req.setRequestHeader("Connection", "close");
+	req.setRequestHeader("X-CSRFToken", csrftoken);
 	
 	req.onreadystatechange = function(e) {
 		if (req.readyState == XMLHttpRequest.DONE) {
 			if (req.status == 200) {
 				console.log("It worked, probably");
+				callback();
 			} else {
 				console.log("It didn't work (status: "+req.status+")");
 			}
@@ -152,7 +173,15 @@ function updateSort() {
 	tbody.innerHTML = "<tr>"+arr.join("</tr><tr>")+"</tr>";
 }
 
+function clearSongs() {
+	var tbody = document.getElementById("lib-table").getElementsByTagName("tbody")[0];
+	while (tbody.lastChild) {
+		tbody.removeChild(tbody.lastChild);
+	}
+}
+
 function loadSongs() {
+	clearSongs();
 	var songreq = new XMLHttpRequest();
 	songreq.onreadystatechange = function(e) {
 		if (songreq.readyState == XMLHttpRequest.DONE) {

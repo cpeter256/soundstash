@@ -1,8 +1,10 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, render
+from django.views.decorators.csrf import ensure_csrf_cookie
 from .forms import AddSongForm
 from .models import Sound
 
+@ensure_csrf_cookie
 def index(request):
     """
     Display main library page with songs
