@@ -1,16 +1,15 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, render
-from django.views.decorators.csrf import ensure_csrf_cookie
 from django.contrib.auth.decorators import login_required
 
 from .forms import AddSongForm
 from .models import Sound, Playlist
 
-@ensure_csrf_cookie
 @login_required
 def index(request):
     return render_to_response('index.html')
 
+@login_required
 def playlist(request):
     """
     Display "playlist" page with songs
@@ -23,20 +22,19 @@ def add_song(request, playlist='default'):
     Add new song to music db by processing POST
     """
     if (request.method == 'POST'):
-        form = AddSongForm(request.POST)
-        if form.is_valid():
-            url = form.cleaned_data['url']
-            title = form.cleaned_data['title']
-            artist = form.cleaned_data['artist']
-            # TODO handle failures
-            s = Sound(url=url, title=title, artist=artist)
-            s.save()
-            # TODO handle nonexistant playlist
-            p = Playlist.objects.get(owner=request.user,
-                                     slug=playlist)
-            p.sound.add(s)
-            p.save()
-            return HttpResponseRedirect('..') # TODO tell user that it worked!!
+        # TODO handle failures
+        artist = request.POST['artist']
+        title = request.POST['title']
+        url = request.POST['url']
+        s = Sound(url=url, title=title, artist=artist)
+        s.save()
+        # TODO handle nonexistant playlist
+        p = Playlist.objects.get(owner=request.user,
+                                 slug=playlist)
+        p.sound.add(s)
+        p.save()
+        return HttpResponse('yay')
+#            return HttpResponseRedirect('..') # TODO tell user that it worked!!
     else:
         form = AddSongForm()
 

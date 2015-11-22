@@ -42,7 +42,11 @@ function submit_song() {
 }
 
 function post_newsong(title, artist, url, callback) {
-	var dest = "/library/add/";
+        var path = window.location.pathname;
+        if (path == '/') {
+            path = '/library/default/';
+        }
+        var dest = path + 'add/';
 	
 	var csrftoken = getCookie('csrftoken');
 	if (!csrftoken) {
@@ -51,11 +55,11 @@ function post_newsong(title, artist, url, callback) {
 	}
 	
 	var req = new XMLHttpRequest();
-	var params = "uri="+url+"&artist="+artist+"&title="+title;
+	var params = "url="+url+"&artist="+artist+"&title="+title;
 	req.open("POST", dest, true);
 	
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	req.setRequestHeader("Content-length", params.length);
+        req.setRequestHeader("Content-length", params.length);
 	req.setRequestHeader("Connection", "close");
 	req.setRequestHeader("X-CSRFToken", csrftoken);
 	
