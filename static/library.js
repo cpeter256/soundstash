@@ -192,6 +192,7 @@ function loadSongs() {
 			var text = songreq.responseText;
 			if (text) {
 				addSongs(JSON.parse(text));
+				updateSort();
 			} else {
 				alert("An error occurred loading the song database");
 			}
