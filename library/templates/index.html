@@ -13,6 +13,7 @@
     <!-- Django -->
   {% load staticfiles %}
   <link href="{% static 'site.css' %}" rel="stylesheet">
+  <link href=":% static 'login.html' %}">
   <script src="{% static 'library.js' %}"></script>
 </head>
 
@@ -49,7 +50,27 @@
                   </button>
                 </div><!-- end Nav Controls -->
               </li>
-              <li><!-- Search -->
+			  <li>
+			    <!-- song input -->
+				<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#submit_modal"><span class="glyphicon glyphicon-plus"></span></button>
+				<div class="modal fade" id="submit_modal" role="dialog" data-backdrop="false">
+				  <div class="modal-dialog modal-sm">
+					<!-- Modal content-->
+					<div class="modal-content">
+					  <br>
+					  <button type="button" class="close" data-dismiss="modal">&times;&nbsp&nbsp</button>
+					  <br>
+					  <div class="modal-body">
+						<input class="form-control" id="Song URL" type="text"  placeholder="URL"><br>
+						<input class="form-control" id="Song Title" type="text" placeholder="Song Title"><br>
+						<input class="form-control" id="Artist" type="text" placeholder="Song Title"><br>
+						<button type="button" class="btn btn-default" id="Song_submit"><span class="glyphicon glyphicon-plus"></span></button>
+					  </div>
+					</div>
+				  </div>
+			    </div><!--End song input-->
+              </li>
+			  <li><!-- Search -->
                 <div class="input-group input-group-sm m-y" id="lib-search"><!-- Nav Search -->
                   <input type="text" class="form-control" placeholder="Search" onkeypress=searchIfSpace(event) id="lib-search-field">
                   <span class="input-group-btn">
@@ -66,8 +87,12 @@
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a>Login</a></li>
-                    <li><a>Register</a></li>
+                    <li>
+					  <a href="login.html">Login</a>
+					</li>
+                    <li>
+					  <a href="registration.html">Registration<a>	  
+					</li>
                   </ul>
                 </div>
               </li>
@@ -79,6 +104,8 @@
     </div>
   </nav><!-- end Navbar -->
   <div class="container-fluid"><!-- Library -->
+<<<<<<< HEAD
+=======
     <!-- Trigger the modal with a button -->
     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#submit_modal"><span class="glyphicon glyphicon-plus"></span></button>
     <div class="modal fade" id="submit_modal" role="dialog">
@@ -101,6 +128,7 @@
         </div>
       </div>
     </div>  
+>>>>>>> origin/master
     <div class="row">
       <div class="col-xs-2 col-md-4"></div>
       <div class="col-xs-8 col-md-4 text-center">
