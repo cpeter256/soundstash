@@ -42,12 +42,6 @@ function submit_song() {
 }
 
 function post_newsong(title, artist, url, callback) {
-        var path = window.location.pathname;
-        if (path == '/') {
-            path = '/library/default/';
-        }
-        var dest = path + 'add/';
-	
 	var csrftoken = getCookie('csrftoken');
 	if (!csrftoken) {
 		console.log("Something went wrong getting the csrf token");
@@ -56,7 +50,7 @@ function post_newsong(title, artist, url, callback) {
 	
 	var req = new XMLHttpRequest();
 	var params = "url="+url+"&artist="+artist+"&title="+title;
-	req.open("POST", dest, true);
+	req.open("POST", "#", true);
 	
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         req.setRequestHeader("Content-length", params.length);

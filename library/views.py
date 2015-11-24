@@ -22,10 +22,7 @@ def playlist(request):
     return render_to_response('index.html')
 
 @login_required
-def add_song(request, playlist='default'):
-    """
-    Add new song to music db by processing POST
-    """
+def playlist_view(request, playlist='default'):
     if (request.method == 'POST'):
         # TODO handle failures
         artist = request.POST['artist']
@@ -40,7 +37,7 @@ def add_song(request, playlist='default'):
         p.save()
         return HttpResponse()
     else:
-        raise Http404
+        return render_to_response('index.html')
 
 # TODO maybe move this fn to another file?
 @login_required
