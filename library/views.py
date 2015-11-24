@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response, render
 from django.contrib.auth.decorators import login_required
 
@@ -41,11 +41,7 @@ def add_song(request, playlist='default'):
         return HttpResponse('yay')
 #            return HttpResponseRedirect('..') # TODO tell user that it worked!!
     else:
-        form = AddSongForm()
-
-    return render(request, 'add.html', {
-        'form': form,
-    })
+        raise Http404
 
 # TODO maybe move this fn to another file?
 @login_required
