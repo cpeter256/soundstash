@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^library_json/', include('library_json.urls')),
     url(r'^login/$', views.login),
     url(r'^logout/$', views.logout),
+    url(r'^playlists/all', library.views.list_of_playlists),
     url(r'^$', library.views.index, name='index'),
     url(r'^library/', include('library.urls')),
     url(r'^admin/', include(admin.site.urls)),

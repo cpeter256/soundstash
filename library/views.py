@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import AddSongForm
 from .models import Sound, Playlist
 
+import json
+
 @login_required
 def index(request):
     return render_to_response('index.html')
@@ -44,3 +46,13 @@ def add_song(request, playlist='default'):
     return render(request, 'add.html', {
         'form': form,
     })
+
+# TODO maybe move this fn to another file?
+@login_required
+def list_of_playlists(request):
+    """
+    Return a list of all playlists owned by user
+    when an HTTP request is made to /playlists/all
+    """
+    playlists = Playlist.objects.filter(owner=request.user).values('name')
+    return HttpResponse(json.dumps(list(playlists)), content_type='application/json')
