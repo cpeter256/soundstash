@@ -38,8 +38,7 @@ def add_song(request, playlist='default'):
                                  slug=playlist)
         p.sound.add(s)
         p.save()
-        return HttpResponse('yay')
-#            return HttpResponseRedirect('..') # TODO tell user that it worked!!
+        return HttpResponse()
     else:
         raise Http404
 
