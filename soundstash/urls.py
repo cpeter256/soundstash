@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^$', library.views.index, name='index'),
     url(r'^library/', include('library.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^login/registration', library.views.register, name='register')
 ]
