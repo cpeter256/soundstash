@@ -4,6 +4,7 @@ from .views import *
 import library_json.views
 
 urlpatterns = [
+    url(r'^$', list_of_playlists), # TODO do something else
 
     url(r'^(?P<playlist>[\w-]+)/$', playlist_view),
 

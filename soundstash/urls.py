@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic.base import RedirectView
 
 import library.views
 from . import views
@@ -24,7 +25,7 @@ urlpatterns = [
     url(r'^login/$', views.login),
     url(r'^logout/$', views.logout),
     url(r'^playlists/all/$', library.views.list_of_playlists),
-    url(r'^$', library.views.index, name='index'),
+    url(r'^$', RedirectView.as_view(url='library/default',permanent=True)),
     url(r'^library/', include('library.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/registration', library.views.register, name='register')
