@@ -36,13 +36,14 @@
 		<br><br>
 		<font size=14>Login</font>
 		<br>
-		<Form method=post>
-			<input class="form-control" id="username_submit" type="text"  placeholder="Username"><br>
-			<input class="form-control" id="password_submit" type="password" placeholder="Password"><br>
-			<input type="submit" id="login_submit">Submit</button>
-			<br><br>
+		<form method="post">
+                        {% csrf_token %}
+			<input class="form-control" name="username" id="username_submit" type="text" placeholder="Username" /><br />
+			<input class="form-control" name="password" id="password_submit" type="password" placeholder="Password" /><br />
+			<input type="submit" id="login_submit" value="Login" />
+			<br /><br />
 			<small>Not Registered?</small>
-		</Form>
+		</form>
 		<a href="/registration"><small> Register now!</small></a><!-- Needs a link to this page-->
       </div>
       <div class="col-sx-2 col-md-4"></div>

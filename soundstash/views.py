@@ -8,7 +8,7 @@ def login(request):
     user = auth.authenticate(username=username, password=password)
     if user is not None:
         auth.login(request, user)
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect(request.GET.get('next'))
     else:
         # TODO Handle invalid login
         return render(request, 'login.html')
