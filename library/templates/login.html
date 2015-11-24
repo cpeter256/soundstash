@@ -23,7 +23,7 @@
         <div class="col-xs-1 col-md-3"></div>
         <div class="col-xs-10 col-md-7">
           <div class="navbar-header"><!-- Navbar header -->
-            <a class="navbar-brand" href="index.html"><strong>SoundStash</strong></a>
+            <a class="navbar-brand" href="/library"><strong>SoundStash</strong></a>
           </div><!-- end Navbar header -->
 		</div>
 	  </div>
@@ -34,14 +34,16 @@
       <div class="col-xs-2 col-md-4"></div>
       <div class="col-xs-8 col-md-4 text-center">
 		<br><br>
-		Login
+		<font size=14>Login</font>
 		<br>
-		<input class="form-control" id="username_submit" type="text"  placeholder="Username"><br>
-		<input class="form-control" id="password_submit" type="password" placeholder="Password"><br>
-		<button type="button" class="btn btn-default" id="login_submit">Submit</button>
-		<br><br>
-		<small>Not Registered?</small>
-		<a href="registration.html"><small> Register now!</small></a>
+		<Form method=post>
+			<input class="form-control" id="username_submit" type="text"  placeholder="Username"><br>
+			<input class="form-control" id="password_submit" type="password" placeholder="Password"><br>
+			<input type="submit" id="login_submit">Submit</button>
+			<br><br>
+			<small>Not Registered?</small>
+		</Form>
+		<a href="/registration"><small> Register now!</small></a><!-- Needs a link to this page-->
       </div>
       <div class="col-sx-2 col-md-4"></div>
     </div>
