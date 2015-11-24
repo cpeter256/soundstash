@@ -28,6 +28,10 @@ def playlist_view(request, playlist='default'):
         artist = request.POST['artist']
         title = request.POST['title']
         url = request.POST['url']
+        # TODO want to check if user has this song in another playlist
+        # and re-use it if they do!
+        # BUT don't want to share song objs amongst users...
+        # what if one user edits the song info? it would change for everyone else
         s = Sound(url=url, title=title, artist=artist)
         s.save()
         # TODO handle nonexistant playlist
@@ -38,6 +42,27 @@ def playlist_view(request, playlist='default'):
         return HttpResponse()
     else:
         return render_to_response('index.html')
+
+@login_required
+def delete_song(request, playlist_slug, pk):
+    """
+    Delete a song by PK from playlist
+    when DELETE request is sent to /library/<pl>/<pk>/
+    """
+    if (request.method == 'DELETE'):
+        try:
+            p = Playlist.objects.get(slug=playlist_slug,
+                                     owner=request.user)
+            s = Sound.objects.get(pk=pk)
+            s.delete()
+            # check if this song is in other playlists
+            # if not, delete it too
+            return HttpResponse('Congrats you found this page')
+        except Playlist.DoesNotExist:
+            raise Http404('Playlist does not exist')
+    else:
+        raise Http404
+            
 
 # TODO maybe move this fn to another file?
 @login_required

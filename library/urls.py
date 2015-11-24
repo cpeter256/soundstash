@@ -6,6 +6,8 @@ import library_json.views
 urlpatterns = [
     url(r'^$', list_of_playlists), # TODO do something else
 
+    url(r'(?P<playlist_slug>[\w-]+)/(?P<pk>[\d]+)/$', delete_song),
+
     url(r'^(?P<playlist>[\w-]+)/$', playlist_view),
 
     url(r'^(?P<playlist_name>[\w-]+)/library_json/$', library_json.views.libraryView),
