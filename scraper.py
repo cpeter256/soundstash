@@ -15,8 +15,8 @@ class YoutubeScraper:
       yt = '^.*(youtu.be\/|v\/|u\/\w\/|watch\?v=|\&v=)([^#\&\?]*).*'
       regex = re.compile(yt)
       match = regex.search(url) 
-      if match == None: raise Exception('invalid or unsupported url')
-    # resume scrape function
+      if match == None: raise Exception
+    # begin scrape function
     info = ('', '') # (title, artist) tuple
     try:
       validate(url)
@@ -61,7 +61,7 @@ class YoutubeScraper:
         elif start and end: break
       for i in range(start, end): artist += words[i] + ' '
       return artist[:len(artist)-1] # strip last space
-    # resume __extract_info function
+    # begin __extract_info function
     artist = ''
     title = self.__browser.find_by_id('eow-title').value
     extras = self.__browser.find_by_id('watch-description-extras').value
