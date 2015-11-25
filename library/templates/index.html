@@ -15,9 +15,12 @@
   <link href="{% static 'site.css' %}" rel="stylesheet">
   <link href=":% static 'login.html' %}">
   <script src="{% static 'library.js' %}"></script>
+  <script type="text/javascript">
+    $(document).ready(onDocReady);
+  </script>
 </head>
 
-<body onload=loadSongs()>
+<body>
   <nav class="navbar navbar-inverse navbar-fixed-top"><!-- Navbar -->
     <div class="container-fluid">
       <div class="row">

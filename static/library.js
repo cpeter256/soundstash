@@ -259,6 +259,21 @@ function loadSongs() {
 	songreq.send();
 }
 
+function onDocReady() {
+    loadSongs();
+    attachHandlers();
+    return;
+}
+
+function attachHandlers() {
+    // listen for search-box changes & run search
+    $("#lib-search-field").bind('input', function() {
+        doSearch();
+    });
+
+    return;
+}
+
 function searchIfSpace(e) {
 	if (e.keyCode === 13) {
 		doSearch();
