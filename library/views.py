@@ -48,6 +48,7 @@ def playlist_view(request, playlist='default'):
         # TODO both these deletes are necessary right
         songs.delete()
         p.delete()
+        return HttpResponse()
     else:
         return render_to_response('index.html')
 
