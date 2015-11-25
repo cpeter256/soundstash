@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.views.generic.base import RedirectView
 
 import library.views
+import registration.views
 from . import views
 
 urlpatterns = [
@@ -28,5 +29,5 @@ urlpatterns = [
     url(r'^$', RedirectView.as_view(url='library/default',permanent=True)),
     url(r'^library/', include('library.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^registration', library.views.register, name='register')
+    url(r'^registration', registration.views.register, name='register')
 ]

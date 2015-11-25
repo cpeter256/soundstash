@@ -1,7 +1,8 @@
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
+from django.shortcuts import render_to_response
 
-def index(request):
-	return HttpResponse('registration/static/registration/index.html')
+def register(request):
+	return render_to_response('registration.html')
 
 # Create your views here.

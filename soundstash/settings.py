@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'library_json',
     'library',
     'soundstash',
+    'registration', 
 )
 
 MIDDLEWARE_CLASSES = (
