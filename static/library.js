@@ -49,11 +49,11 @@ function delete_song(pk, callback) {
 	}
 	
 	var req = new XMLHttpRequest();
-	req.open("DELETE", "delete/"+pk+"", true);
+	req.open("DELETE", ""+pk+"/", true);
 	
 	/*req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	req.setRequestHeader("Content-length", params.length);
-	req.setRequestHeader("X-CSRFToken", csrftoken);*/
+	req.setRequestHeader("Content-length", params.length);*/
+	req.setRequestHeader("X-CSRFToken", csrftoken);
 	req.setRequestHeader("Connection", "close");
 	
 	req.onreadystatechange = function (e) {
