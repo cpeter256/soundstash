@@ -12,5 +12,4 @@ def libraryView(request, playlist_name='default'):
     data = Sound.objects.filter(playlist__name=playlist_name,
                                 playlist__owner__username=request.user).values('pk','artist','title','url')
 
-    print("JSON: " + json.dumps(list(data)))
     return HttpResponse(json.dumps(list(data)), content_type='application/json')
