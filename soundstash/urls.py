@@ -28,5 +28,5 @@ urlpatterns = [
     url(r'^$', RedirectView.as_view(url='library/default',permanent=True)),
     url(r'^library/', include('library.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^login/registration', library.views.register, name='register')
+    url(r'^registration', library.views.register, name='register')
 ]
