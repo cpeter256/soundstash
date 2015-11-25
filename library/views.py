@@ -89,12 +89,11 @@ def list_of_playlists(request):
             # TODO handle invalid names eg already own this name
             p = Playlist(name=name, owner=request.user)
             p.save()
+            return HttpResponse()
             # django.db.utils.IntegrityError
         except IntegrityError:
             # TODO unsure if we want this behaviour
             raise Http404('Playlist already exists')
     else:
-        playlists = Playlist.objects.filter(owner=request.user).values('name')
-        return HttpResponse(json.dumps(list(playlists)),
-                            content_type='application/json')
-
+        playlists = Playlist.objects.filter(owner=request.user)
+        return render(request,'playlist_select.html', {'playlists': playlists})
