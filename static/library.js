@@ -77,7 +77,9 @@ function post_newsong(title, artist, url, callback) {
 	}
 
 	var req = new XMLHttpRequest();
-	var params = "url=" + url + "&artist=" + artist + "&title=" + title;
+        var params = "url=" + encodeURIComponent(url)
+            + "&artist=" + encodeURIComponent(artist)
+            + "&title=" + encodeURIComponent(title);
 	req.open("POST", "#", true);
 
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
