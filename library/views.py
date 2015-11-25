@@ -15,13 +15,6 @@ def register(request):
     return render_to_response('registration.html')
 
 @login_required
-def playlist(request):
-    """
-    Display "playlist" page with songs
-    """
-    return render_to_response('index.html')
-
-@login_required
 def playlist_view(request, playlist='default'):
     if (request.method == 'POST'):
         # TODO handle failures
@@ -53,7 +46,7 @@ def playlist_view(request, playlist='default'):
             raise HttpResponse(status=400)
         return HttpResponse()
     else:
-        return render_to_response('index.html')
+        return render(request,'index.html')
 
 @login_required
 def delete_song(request, playlist_slug, pk):
@@ -89,12 +82,11 @@ def list_of_playlists(request):
             # TODO handle invalid names eg already own this name
             p = Playlist(name=name, owner=request.user)
             p.save()
+            return HttpResponse()
             # django.db.utils.IntegrityError
         except IntegrityError:
             # TODO unsure if we want this behaviour
             raise Http404('Playlist already exists')
     else:
-        playlists = Playlist.objects.filter(owner=request.user).values('name')
-        return HttpResponse(json.dumps(list(playlists)),
-                            content_type='application/json')
-
+        playlists = Playlist.objects.filter(owner=request.user)
+        return render(request,'playlist_select.html', {'playlists': playlists})

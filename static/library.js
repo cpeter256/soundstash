@@ -77,7 +77,9 @@ function post_newsong(title, artist, url, callback) {
 	}
 
 	var req = new XMLHttpRequest();
-	var params = "url=" + url + "&artist=" + artist + "&title=" + title;
+        var params = "url=" + encodeURIComponent(url)
+            + "&artist=" + encodeURIComponent(artist)
+            + "&title=" + encodeURIComponent(title);
 	req.open("POST", "#", true);
 
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -255,6 +257,21 @@ function loadSongs() {
 	};
 	songreq.open("GET", "library_json/");
 	songreq.send();
+}
+
+function onDocReady() {
+    loadSongs();
+    attachHandlers();
+    return;
+}
+
+function attachHandlers() {
+    // listen for search-box changes & run search
+    $("#lib-search-field").bind('input', function() {
+        doSearch();
+    });
+
+    return;
 }
 
 function searchIfSpace(e) {

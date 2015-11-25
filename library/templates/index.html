@@ -15,9 +15,12 @@
   <link href="{% static 'site.css' %}" rel="stylesheet">
   <link href=":% static 'login.html' %}">
   <script src="{% static 'library.js' %}"></script>
+  <script type="text/javascript">
+    $(document).ready(onDocReady);
+  </script>
 </head>
 
-<body onload=loadSongs()>
+<body>
   <nav class="navbar navbar-inverse navbar-fixed-top"><!-- Navbar -->
     <div class="container-fluid">
       <div class="row">
@@ -28,6 +31,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand"><strong>SoundStash</strong></a>
           </div><!-- end Navbar header -->          
@@ -61,22 +65,22 @@
                 </div><!-- end Nav Search -->
               </li>
               <li><!-- Account -->
+            </ul>
+            <!--<ul class="nav navbar-nav navbar-right">-->
                 <div class="btn-group btn-group-sm" id="user-account-btn"><!-- Nav Account -->
                   <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
                     <span class="glyphicon glyphicon-user"></span>
+                    {{ user.get_username }}
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu">
-                    <li>
-                      <a href="login.html">Login</a>
-                    </li>
-                    <li>
-                      <a href="registration.html">Registration</a>	  
-                    </li>
-                  </ul>
+                    <li><a href="/library/">Playlists</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/logout/">Logout</a></li>
+                  <!--</ul>-->
                 </div>
               </li>
-            </ul>
+			  <!--<ul class="nav navbar-nav navbar-right">-->
           </div><!-- end Navbar body -->
         </div>
         <div class="col-xs-1 col-md-2"></div>
@@ -84,28 +88,44 @@
     </div>
   </nav><!-- end Navbar -->
   <div class="container-fluid"><!-- Library -->
-    <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#submit_modal"><span class="glyphicon glyphicon-plus"></span></button>
-    <div class="modal fade" id="submit_modal" role="dialog">
-      <div class="modal-dialog modal-sm">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Submit Song</h4>
-          </div>
-          <div class="modal-body">
-            <!-- Input form. Need to find out how to work with javascript-->
-            <form action="#" onsubmit="submit_song()">
-              <input class="form-control" id="Song URL" type="url" placeholder="URL" autocomplete="off" required /><br />
-              <input class="form-control" id="Song Title" type="text" placeholder="Song Title" required /><br />
-              <input class="form-control" id="Artist" type="text" placeholder="Artist" /><br />
-              <button type="submit" class="btn btn-default glyphicon glyphicon-plus" id="Song_submit" />
-            </form>
+    <div align="left">
+	  <!-- Trigger the modal with a button -->
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#submit_modal"><span class="glyphicon glyphicon-plus"></span></button>
+      <div class="modal fade" id="submit_modal" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Submit Song</h4>
+            </div>
+            <div class="modal-body">
+              <!-- Input form.-->
+              <form action="#" onsubmit="submit_song()">
+                <input class="form-control" id="Song URL" type="url" placeholder="URL" autocomplete="off" required /><br />
+                <input class="form-control" id="Song Title" type="text" placeholder="Song Title" required /><br />
+                <input class="form-control" id="Artist" type="text" placeholder="Artist" /><br />
+                <button type="submit" class="btn btn-default glyphicon glyphicon-plus" id="Song_submit" />
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+	</div>
+	<div align="left"><!--Playlist Drop down-->
+	  <div class="btn-group btn-group-sm" >
+        <button type="button" class="btn dropdown-toggle" id="playlist-btn" data-toggle="dropdown">
+          <span>Playlists</span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <a href="new_playlist.html">New Playlist</a>
+		  <div class="list-group" id="list_group">
+			<a>playlists go here</a><!-- is it possible Populate this like table-->
+		  </div>
+		</ul>
+	  </div>
+	</div><!--Playlist drop down end-->
     <div class="row">
       <div class="col-xs-2 col-md-4"></div>
       <div class="col-xs-8 col-md-4 text-center">
@@ -126,6 +146,7 @@
       <div class="col-sx-2 col-md-4"></div>
     </div>
   </div><!-- end Library -->
+  
 </body>
 
 </html>
