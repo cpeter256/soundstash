@@ -38,9 +38,9 @@
 		<br>
 		<form method="post">
                         {% csrf_token %}
-			<input class="form-control" name="username" id="username_submit" type="text" placeholder="Username" /><br />
+			<input class="form-control" name="username" id="username_submit" type="text" placeholder="Username" autofocus /><br />
 			<input class="form-control" name="password" id="password_submit" type="password" placeholder="Password" /><br />
-			<input type="submit" id="login_submit" value="Login" />
+			<input type="submit" class="btn btn-default" id="login_submit" value="Go!" />
 			<br /><br />
 			<small>Not Registered?</small>
 		</form>
