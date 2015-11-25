@@ -76,6 +76,17 @@
                   </ul>
                 </div>
               </li>
+			  <li><!-- Playlist dropdown-->
+			    <div class="btn-group btn-group-sm" id="playlist-btn">
+                  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                    <span>Playlists</span>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <a href="new_playlist.html">New Playlist</a>
+					<div class="list-group" id="list_group">
+					<a>playlists go here</a><!-- is it possible Populate this like table-->
+			  </li>
             </ul>
           </div><!-- end Navbar body -->
         </div>
@@ -95,7 +106,7 @@
             <h4 class="modal-title">Submit Song</h4>
           </div>
           <div class="modal-body">
-            <!-- Input form. Need to find out how to work with javascript-->
+            <!-- Input form.-->
             <form action="#" onsubmit="submit_song()">
               <input class="form-control" id="Song URL" type="url" placeholder="URL" autocomplete="off" required /><br />
               <input class="form-control" id="Song Title" type="text" placeholder="Song Title" required /><br />
