@@ -61,18 +61,18 @@
                 </div><!-- end Nav Search -->
               </li>
               <li><!-- Account -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
                 <div class="btn-group btn-group-sm" id="user-account-btn"><!-- Nav Account -->
                   <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
                     <span class="glyphicon glyphicon-user"></span>
+                    {{ user.get_username }}
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu">
-                    <li>
-                      <a href="login.html">Login</a>
-                    </li>
-                    <li>
-                      <a href="registration.html">Registration</a>	  
-                    </li>
+                    <li><a href="/library/">Playlists</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/logout/">Logout</a></li>
                   </ul>
                 </div>
               </li>
