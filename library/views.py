@@ -40,6 +40,14 @@ def playlist_view(request, playlist='default'):
         p.sound.add(s)
         p.save()
         return HttpResponse()
+    elif (request.method == 'DELETE'):
+        # TODO check for existence
+        p = Playlist.objects.get(owner=request.user,
+                                 slug=playlist)
+        songs = Sound.objects.filter(playlist=p)
+        # TODO both these deletes are necessary right
+        songs.delete()
+        p.delete()
     else:
         return render_to_response('index.html')
 
