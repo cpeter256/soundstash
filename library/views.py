@@ -46,7 +46,7 @@ def playlist_view(request, playlist='default'):
             raise HttpResponse(status=400)
         return HttpResponse()
     else:
-        return render_to_response('index.html')
+        return render(request,'index.html')
 
 @login_required
 def delete_song(request, playlist_slug, pk):
