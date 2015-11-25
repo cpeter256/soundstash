@@ -222,6 +222,23 @@ function clearSongs() {
 	}
 }
 
+function loadPlaylists() {
+	var req = new XMLHttpRequest();
+	req.onreadystatechange = function (e) {
+		if (req.readyState == XMLHttpRequest.DONE) {
+			var text = req.responseText;
+			if (text) {
+				//Do something real
+				console.log(JSON.parse(text));
+			} else {
+				alert("An error occurred loading the playlists");
+			}
+		}
+	};
+	req.open("GET", "/playlists/all");
+	req.send();
+}
+
 function loadSongs() {
 	clearSongs();
 	var songreq = new XMLHttpRequest();
