@@ -41,6 +41,34 @@ function submit_song() {
 	}
 }
 
+function delete_list() {
+	var csrftoken = getCookie('csrftoken');
+	if (!csrftoken) {
+		console.log("Something went wrong getting the csrf token");
+		return;
+	}
+	
+	var req = new XMLHttpRequest();
+	req.open("DELETE", "#", true);
+	
+	/*req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	req.setRequestHeader("Content-length", params.length);*/
+	req.setRequestHeader("X-CSRFToken", csrftoken);
+	req.setRequestHeader("Connection", "close");
+	
+	req.onreadystatechange = function (e) {
+		if (req.readyState == XMLHttpRequest.DONE) {
+			if (req.status == 200) {
+				console.log("It worked, probably");
+				callback();
+			} else {
+				console.log("It didn't work (status: " + req.status + ")");
+			}
+		}
+	}
+	req.send();
+}
+
 function delete_song(pk, callback) {
 	var csrftoken = getCookie('csrftoken');
 	if (!csrftoken) {
@@ -77,10 +105,37 @@ function post_newsong(title, artist, url, callback) {
 	}
 
 	var req = new XMLHttpRequest();
-        var params = "url=" + encodeURIComponent(url)
-            + "&artist=" + encodeURIComponent(artist)
-            + "&title=" + encodeURIComponent(title);
+	var params = "url=" + url + "&artist=" + artist + "&title=" + title;
 	req.open("POST", "#", true);
+
+	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	req.setRequestHeader("Content-length", params.length);
+	req.setRequestHeader("Connection", "close");
+	req.setRequestHeader("X-CSRFToken", csrftoken);
+
+	req.onreadystatechange = function (e) {
+		if (req.readyState == XMLHttpRequest.DONE) {
+			if (req.status == 200) {
+				console.log("It worked, probably");
+				callback();
+			} else {
+				console.log("It didn't work (status: " + req.status + ")");
+			}
+		}
+	}
+	req.send(params);
+}
+
+function post_newlist(name, callback) {
+	var csrftoken = getCookie('csrftoken');
+	if (!csrftoken) {
+		console.log("Something went wrong getting the csrf token");
+		return;
+	}
+
+	var req = new XMLHttpRequest();
+	var params = "name="+name;
+	req.open("POST", "/library/", true);
 
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	req.setRequestHeader("Content-length", params.length);
@@ -259,21 +314,6 @@ function loadSongs() {
 	songreq.send();
 }
 
-function onDocReady() {
-    loadSongs();
-    attachHandlers();
-    return;
-}
-
-function attachHandlers() {
-    // listen for search-box changes & run search
-    $("#lib-search-field").bind('input', function() {
-        doSearch();
-    });
-
-    return;
-}
-
 function searchIfSpace(e) {
 	if (e.keyCode === 13) {
 		doSearch();
@@ -327,7 +367,7 @@ function addSongHTML(song) {
 	row.appendChild(artist);
 
 	var pk = document.createElement("td");
-        pk.style.display = "none";
+	pk.style = "display:none";
 	pk.innerHTML = song.pk;
 	row.appendChild(pk);
 
