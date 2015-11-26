@@ -7,6 +7,18 @@ body {
   padding-top: 50px;
 }
 
+#new-sound-btn {
+  margin-top: 25px;
+  padding: 15px;
+  background-color: #222;
+  color: #CCC;
+}
+
+#new-sound-modal {
+  background-color: #222;
+  color: #CCC;
+}
+
 #lib-control {
   margin: 10px 5px;
 }
