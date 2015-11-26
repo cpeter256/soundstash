@@ -31,5 +31,5 @@ urlpatterns = [
     url(r'^$', RedirectView.as_view(url='library/default',permanent=True)),
     url(r'^library/', include('library.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^registration/$', registration.views.register)
+    url(r'^registration/', registration.views.register),
 ]
