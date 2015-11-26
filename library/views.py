@@ -11,9 +11,6 @@ import json
 def index(request):
     return render_to_response('index.html')
 
-def register(request):
-    return render_to_response('registration.html')
-
 @login_required
 def playlist_view(request, playlist='default'):
     if (request.method == 'POST'):
