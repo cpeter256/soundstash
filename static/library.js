@@ -108,7 +108,7 @@ function post_newsong(title, artist, url, callback) {
 	}
 
 	var req = new XMLHttpRequest();
-	var params = "url=" + url + "&artist=" + artist + "&title=" + title;
+	var params = "url=" + encodeURIComponent(url) + "&artist=" + encodeURIComponent(artist) + "&title=" + encodeURIComponent(title);
 	req.open("POST", "#", true);
 
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -137,7 +137,7 @@ function post_newlist(name, callback) {
 	}
 
 	var req = new XMLHttpRequest();
-	var params = "name="+name;
+	var params = "name="+encodeURIComponent(name);
 	req.open("POST", "/library/", true);
 
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -298,7 +298,7 @@ function loadPlaylists() {
 					link.innerHTML = name;
 					var div = document.createElement("div");
 					div.appendChild(link);
-					ui.appendChild(div);
+					ui.appendChild(div	);
 				}
 			} else {
 				alert("An error occurred loading the playlists");
@@ -389,6 +389,7 @@ function addSongHTML(song) {
 	return row;
 }
 
+<<<<<<< HEAD
 function optionsColumn(song) {
   var opt = document.createElement("td");
   var close = document.createElement("a");
@@ -399,4 +400,13 @@ function optionsColumn(song) {
   close.appendChild(span);
   opt.appendChild(close);
   return opt;
+=======
+function attachHandlers() {
+    // listen for search-box changes & run search
+    $("#lib-search-field").bind('input', function() {
+        doSearch();
+    });
+
+    return;
+>>>>>>> master
 }

@@ -11,9 +11,6 @@ import json
 def index(request):
     return render_to_response('index.html')
 
-def register(request):
-    return render_to_response('registration.html')
-
 @login_required
 def playlist_view(request, playlist='default'):
     if (request.method == 'POST'):
@@ -58,11 +55,13 @@ def delete_song(request, playlist_slug, pk):
         try:
             p = Playlist.objects.get(slug=playlist_slug,
                                      owner=request.user)
-            s = Sound.objects.get(pk=pk)
-            s.delete()
-            # check if this song is in other playlists
-            # if not, delete it too
-            return HttpResponse('Congrats you found this page')
+            if (p.name='default'):
+                # don't let user delete default playlist!
+                return HttpResponse(status=400)
+            else:
+                s = Sound.objects.get(pk=pk)
+                s.delete()
+                return HttpResponse()
         except Playlist.DoesNotExist:
             raise Http404('Playlist does not exist')
     else:
