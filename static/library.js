@@ -377,9 +377,18 @@ function addSongHTML(song) {
 	row.appendChild(artist);
 
 	var pk = document.createElement("td");
-	pk.style = "display:none";
+	pk.style.display = "none";
 	pk.innerHTML = song.pk;
 	row.appendChild(pk);
 
 	return row;
+}
+
+function attachHandlers() {
+    // listen for search-box changes & run search
+    $("#lib-search-field").bind('input', function() {
+        doSearch();
+    });
+
+    return;
 }
