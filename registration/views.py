@@ -17,7 +17,7 @@ def register(request):
 
 		#create the user object
 		new_user  = User.objects.create_user(usr_name, email, password)
-        	new_user.first_name = first_name
+		new_user.first_name = first_name
 		new_user.last_name  = last_name
 		new_user.save()
 
