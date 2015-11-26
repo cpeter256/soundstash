@@ -408,6 +408,68 @@ function optionsColumn(song) {
 	return opt;
 }
 
+//That's right... three nested requests
+function submit_playlist() {
+	var lists = null;
+	var name = document.getElementById("Playlist_name").value;
+	
+	var req = new XMLHttpRequest();
+	req.onreadystatechange = function (e) {
+		if (req.readyState == XMLHttpRequest.DONE) {
+			var text = req.responseText;
+			var lists = null;
+			if (text) {
+				lists = JSON.parse(text);
+			} else {
+				console.log("an error occurred loading the playlists (status: "+req.status+")");
+			}
+			
+			if (lists != null) {
+				for (var i = 0; i < lists.length; i++) {
+					if (name == lists[i].name) {
+						//already exists!
+						alert("A playlist with that name already exists!");
+						return false;
+					}
+				}
+			}
+			
+			post_newlist(name, function() {
+				//get the playlist list AGAIN so we can get the slug
+				var req2 = new XMLHttpRequest();
+				req2.onreadystatechange = function (e) {
+					if (req2.readyState == XMLHttpRequest.DONE) {
+						var text = req2.responseText;
+						if (text) {
+							var lists = JSON.parse(text);
+							var slug = null;
+							for (var i = 0; i < lists.length; i++) {
+								if (name == lists[i].name) {
+									slug = lists[i].slug;
+									break;
+								}
+							}
+							if (slug) {
+								$(location).attr("href", "/library/"+slug);
+							} else {
+								console.log("Something horrible happened!");
+							}
+						} else {
+							console.log("An error occurred loading the playlists (status: "+req2.status+")");
+						}
+					}
+				};
+				req2.open("GET", "/playlists/all/");
+				req2.send();
+			});
+		}
+	};
+	req.open("GET", "/playlists/all/");
+	req.send();
+	
+	return false;
+}
+
 function attachHandlers() {
 	// listen for search-box changes & run search
 	$("#lib-search-field").bind('input', function() {
