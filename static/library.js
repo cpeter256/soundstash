@@ -270,7 +270,7 @@ function updateSort() {
 		return (a[col] == b[col]) ? 0 : ((a[col] > b[col]) ? asc : -1 * asc);
 	});
 	for (i = 0; i < rlen; i++) {
-		arr[i] = "<td>" + arr[i].join("</td><td>") + "</td>";
+		arr[i] = "<td>" + arr[i].slice(0, 3).join("</td><td>") + "</td><td class=\"pk_col\" style=\"display: none\">" + arr[i][3] + "</td>";
 	}
 	tbody.innerHTML = "<tr>" + arr.join("</tr><tr>") + "</tr>";
 }
