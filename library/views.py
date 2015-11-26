@@ -70,7 +70,7 @@ def delete_song(request, playlist_slug, pk):
 
 @login_required
 def playlists_json(request):
-    ps = Playlist.objects.filter(owner=request.user).values('name')
+    ps = Playlist.objects.filter(owner=request.user).values('name','slug')
     return HttpResponse(json.dumps(list(ps)),
                         content_type='application/json')
     
