@@ -62,6 +62,18 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Playlists <span class="sr-only">(current)</span></a></li>
         <li><a href="/new_playlist.html">Create New</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Delete Playlist
+            <span class="caret" />
+          </a>
+          <ul class="dropdown-menu">
+            {% for playlist in playlists %}
+            <li>
+              {{ playlist.name }}
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
