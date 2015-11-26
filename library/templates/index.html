@@ -16,7 +16,9 @@
   <link href=":% static 'login.html' %}">
   <script src="{% static 'library.js' %}"></script>
   <script type="text/javascript">
-    $(document).ready(onDocReady);
+    $(document).ready(function() {
+         loadSongs();
+    });
   </script>
 </head>
 
@@ -31,7 +33,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand"><strong>SoundStash</strong></a>
           </div><!-- end Navbar header -->          
@@ -80,7 +82,7 @@
                   <!--</ul>-->
                 </div>
               </li>
-			  <!--<ul class="nav navbar-nav navbar-right">-->
+              <!--<ul class="nav navbar-nav navbar-right">-->
           </div><!-- end Navbar body -->
         </div>
         <div class="col-xs-1 col-md-2"></div>
@@ -89,7 +91,7 @@
   </nav><!-- end Navbar -->
   <div class="container-fluid"><!-- Library -->
     <div align="left">
-	  <!-- Trigger the modal with a button -->
+      <!-- Trigger the modal with a button -->
       <button type="button" class="btn btn-default" data-toggle="modal" data-target="#submit_modal"><span class="glyphicon glyphicon-plus"></span></button>
       <div class="modal fade" id="submit_modal" role="dialog">
         <div class="modal-dialog modal-sm">
@@ -111,21 +113,21 @@
           </div>
         </div>
       </div>
-	</div>
-	<div align="left"><!--Playlist Drop down-->
-	  <div class="btn-group btn-group-sm" >
+    </div>
+    <div align="left"><!--Playlist Drop down-->
+      <div class="btn-group btn-group-sm" >
         <button type="button" class="btn dropdown-toggle" id="playlist-btn" data-toggle="dropdown">
           <span>Playlists</span>
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
           <a href="new_playlist.html">New Playlist</a>
-		  <div class="list-group" id="list_group">
-			<a>playlists go here</a><!-- is it possible Populate this like table-->
-		  </div>
-		</ul>
-	  </div>
-	</div><!--Playlist drop down end-->
+          <div class="list-group" id="list_group">
+            <a>playlists go here</a><!-- is it possible Populate this like table-->
+          </div>
+        </ul>
+      </div>
+    </div><!--Playlist drop down end-->
     <div class="row">
       <div class="col-xs-2 col-md-4"></div>
       <div class="col-xs-8 col-md-4 text-center">
