@@ -26,7 +26,6 @@ urlpatterns = [
     url(r'^library_json/', include('library_json.urls')),
     url(r'^login/$', user_session.views.login),
     url(r'^logout/$', user_session.views.logout),
-    url(r'^playlists/all/$', library.views.list_of_playlists),
     url(r'^playlists/all/$', library.views.playlists_json),
     url(r'^$', RedirectView.as_view(url='library/default',permanent=True)),
     url(r'^library/', include('library.urls')),
