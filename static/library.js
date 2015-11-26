@@ -35,6 +35,9 @@ function submit_song() {
 
 		post_newsong(titlefield.value, artistfield.value, urlfield.value, loadSongs);
 		$("#submit_modal").modal("hide");
+    urlfield.value = "";
+		titlefield.value = "";
+		artistfield.value = "";
 	} else {
 		console.log("Some fields are empty");
 		return;
