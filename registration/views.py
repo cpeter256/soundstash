@@ -6,7 +6,6 @@ from django.http import HttpResponseRedirect
 from .forms import userForm
 
 def register(request):
-	print request
 	if request.method == "POST":
 		form = userForm(request.POST)
 		first_name = request.POST.get('First_name')
