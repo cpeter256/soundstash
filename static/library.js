@@ -389,7 +389,6 @@ function addSongHTML(song) {
 	return row;
 }
 
-<<<<<<< HEAD
 function optionsColumn(song) {
   var opt = document.createElement("td");
   var close = document.createElement("a");
@@ -400,7 +399,8 @@ function optionsColumn(song) {
   close.appendChild(span);
   opt.appendChild(close);
   return opt;
-=======
+}
+
 function attachHandlers() {
     // listen for search-box changes & run search
     $("#lib-search-field").bind('input', function() {
@@ -408,5 +408,4 @@ function attachHandlers() {
     });
 
     return;
->>>>>>> master
 }
