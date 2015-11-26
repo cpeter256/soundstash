@@ -1,3 +1,5 @@
+import itertools
+
 from django.db import models
 from django.conf import settings
 from django.template.defaultfilters import slugify
@@ -31,8 +33,13 @@ class Playlist(models.Model):
         return "%s playlist (owned by %s)" % (self.name, self.owner)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.slug = slug = slugify(self.name)
+
+        for x in itertools.count(1):
+            if not Playlist.objects.filter(slug=self.slug).exists():
+                break
+            self.slug = '%s-%d' % (slug, x)
         super(Playlist, self).save(*args, **kwargs)
-    
+
     class Meta:
         unique_together = ('name','owner')
