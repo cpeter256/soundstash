@@ -55,9 +55,13 @@ def delete_song(request, playlist_slug, pk):
         try:
             p = Playlist.objects.get(slug=playlist_slug,
                                      owner=request.user)
-            s = Sound.objects.get(pk=pk)
-            s.delete()
-            return HttpResponse()
+            if (p.name='default'):
+                # don't let user delete default playlist!
+                return HttpResponse(status=400)
+            else:
+                s = Sound.objects.get(pk=pk)
+                s.delete()
+                return HttpResponse()
         except Playlist.DoesNotExist:
             raise Http404('Playlist does not exist')
     else:
