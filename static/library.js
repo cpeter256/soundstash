@@ -292,7 +292,7 @@ function loadPlaylists() {
 				var ui = document.getElementById("list_group");
 				for (var i = 0; i < lists.length; i++) {
 					var name = lists[i].name;
-					console.log(name);
+					//console.log(name);
 					var link = document.createElement("a");
 					link.href = "/library/" + name;
 					link.innerHTML = name;
@@ -378,10 +378,11 @@ function addSongHTML(song) {
 	title.appendChild(url);
 	row.appendChild(title);
 	row.appendChild(artist);
-  /* NEW */
-  row.appendChild(optionsColumn(song))
-  /* END NEW */
+	/* NEW */
+	row.appendChild(optionsColumn(song))
+	/* END NEW */
 	var pk = document.createElement("td");
+	pk.className = "pk_col";
 	pk.style.display = "none";
 	pk.innerHTML = song.pk;
 	row.appendChild(pk);
@@ -390,22 +391,27 @@ function addSongHTML(song) {
 }
 
 function optionsColumn(song) {
-  var opt = document.createElement("td");
-  var close = document.createElement("a");
-  var span = document.createElement("span");
-  var att = document.createAttribute("class");
-  att.value = "glyphicon glyphicon-remove";
-  span.setAttributeNode(att);
-  close.appendChild(span);
-  opt.appendChild(close);
-  return opt;
+	var opt = document.createElement("td");
+	var close = document.createElement("a");
+	var span = document.createElement("span");
+	var att = document.createAttribute("class");
+	att.value = "glyphicon glyphicon-remove";
+	span.setAttributeNode(att);
+	close.onclick = function() {
+		var row = close.parentNode.parentNode;
+		var pkcol = row.getElementsByClassName("pk_col")[0];
+		delete_song(parseInt(pkcol.innerHTML), loadSongs);
+	}
+	close.appendChild(span);
+	opt.appendChild(close);
+	return opt;
 }
 
 function attachHandlers() {
-    // listen for search-box changes & run search
-    $("#lib-search-field").bind('input', function() {
-        doSearch();
-    });
+	// listen for search-box changes & run search
+	$("#lib-search-field").bind('input', function() {
+		doSearch();
+	});
 
-    return;
+	return;
 }
