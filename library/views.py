@@ -69,6 +69,12 @@ def delete_song(request, playlist_slug, pk):
         raise Http404
             
 
+@login_required
+def playlists_json(request):
+    ps = Playlist.objects.filter(owner=request.user).values('name')
+    return HttpResponse(json.dumps(list(ps)),
+                        content_type='application/json')
+    
 # TODO maybe move this fn to another file?
 @login_required
 def list_of_playlists(request):
