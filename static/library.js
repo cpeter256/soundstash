@@ -383,3 +383,12 @@ function addSongHTML(song) {
 
 	return row;
 }
+
+function attachHandlers() {
+    // listen for search-box changes & run search
+    $("#lib-search-field").bind('input', function() {
+        doSearch();
+    });
+
+    return;
+}
