@@ -89,7 +89,7 @@
     </div>
   </nav><!-- end Navbar -->
   <div class="container-fluid"><!-- Library -->
-    <div align="center"> <!-- New Sound modal -->
+    <div align="center"> <!-- New Sound modal -->      
       <div class="modal fade text-center" id="submit_modal" role="dialog">
         <div class="modal-dialog modal-sm">
           <!-- Modal content-->
@@ -127,16 +127,18 @@
     </div><!--Playlist drop down end-->
     <div class="row">
       <div class="col-xs-2 col-md-4">
-        <button id="new-sound-btn"type="button" class="btn btn-default" data-toggle="modal" data-target="#submit_modal">
-          New Sound
-        </button>
+        <div align="right">
+          <button id="new-sound-btn"type="button" class="btn btn-default" data-toggle="modal" data-target="#submit_modal">
+            New Sound
+          </button>
+        </div>
       </div>
       <div class="col-xs-8 col-md-4 text-center">
         <div class="table-responsive"><!-- Library table -->
           <table class="table table-striped table-condensed" id="lib-table">
             <thead>
               <tr>
-                <th>Title</th> <th>Artist</th>
+                <th>Title</th> <th>Artist</th> <th> </th>
               </tr>
             </thead>
             <div class="scrollbar">

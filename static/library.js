@@ -378,11 +378,25 @@ function addSongHTML(song) {
 	title.appendChild(url);
 	row.appendChild(title);
 	row.appendChild(artist);
-
+  /* NEW */
+  row.appendChild(optionsColumn(song))
+  /* END NEW */
 	var pk = document.createElement("td");
 	pk.style.display = "none";
 	pk.innerHTML = song.pk;
 	row.appendChild(pk);
 
 	return row;
+}
+
+function optionsColumn(song) {
+  var opt = document.createElement("td");
+  var close = document.createElement("a");
+  var span = document.createElement("span");
+  var att = document.createAttribute("class");
+  att.value = "glyphicon glyphicon-remove";
+  span.setAttributeNode(att);
+  close.appendChild(span);
+  opt.appendChild(close);
+  return opt;
 }
