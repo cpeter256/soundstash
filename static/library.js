@@ -292,13 +292,14 @@ function loadPlaylists() {
 				var ui = document.getElementById("list_group");
 				for (var i = 0; i < lists.length; i++) {
 					var name = lists[i].name;
+					var slug = lists[i].slug;
 					//console.log(name);
 					var link = document.createElement("a");
-					link.href = "/library/" + name;
+					link.href = "/library/" + slug;
 					link.innerHTML = name;
 					var div = document.createElement("div");
 					div.appendChild(link);
-					ui.appendChild(div	);
+					ui.appendChild(div);
 				}
 			} else {
 				alert("An error occurred loading the playlists");
