@@ -285,8 +285,18 @@ function loadPlaylists() {
 		if (req.readyState == XMLHttpRequest.DONE) {
 			var text = req.responseText;
 			if (text) {
-				//Do something real
-				console.log(JSON.parse(text));
+				var lists = JSON.parse(text);
+				var ui = document.getElementById("list_group");
+				for (var i = 0; i < lists.length; i++) {
+					var name = lists[i].name;
+					console.log(name);
+					var link = document.createElement("a");
+					link.href = "/library/" + name;
+					link.innerHTML = name;
+					var div = document.createElement("div");
+					div.appendChild(link);
+					ui.appendChild(div);
+				}
 			} else {
 				alert("An error occurred loading the playlists");
 			}
