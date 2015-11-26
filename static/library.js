@@ -44,6 +44,35 @@ function submit_song() {
 	}
 }
 
+// lulz too similar to delete_list 
+function delete_list_by_slug(slug) {
+    var csrftoken = getCookie('csrftoken');
+    if (!csrftoken) {
+	console.log("Something went wrong getting the csrf token");
+	return;
+    }
+    
+    var req = new XMLHttpRequest();
+    req.open("DELETE", "/library/"+slug, true);
+    
+    /*req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      req.setRequestHeader("Content-length", params.length);*/
+    req.setRequestHeader("X-CSRFToken", csrftoken);
+    req.setRequestHeader("Connection", "close");
+    
+    req.onreadystatechange = function (e) {
+	if (req.readyState == XMLHttpRequest.DONE) {
+	    if (req.status == 200) {
+		console.log("It worked, probably");
+                window.location.reload(false);
+	    } else {
+		console.log("It didn't work (status: " + req.status + ")");
+	    }
+	}
+    }
+    req.send();
+}
+
 function delete_list() {
 	var csrftoken = getCookie('csrftoken');
 	if (!csrftoken) {
