@@ -1,3 +1,4 @@
+from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response, render
 from django.contrib.auth.decorators import login_required
@@ -87,7 +88,7 @@ def list_of_playlists(request):
             # TODO handle invalid names eg already own this name
             p = Playlist(name=name, owner=request.user)
             p.save()
-            return HttpResponse()
+            return HttpResponseRedirect('/library/'+p.slug)
             # django.db.utils.IntegrityError
         except IntegrityError:
             # TODO unsure if we want this behaviour
@@ -95,3 +96,7 @@ def list_of_playlists(request):
     else:
         playlists = Playlist.objects.filter(owner=request.user)
         return render(request,'playlist_select.html', {'playlists': playlists})
+
+@login_required
+def create_playlist_view(request):
+    return render(request,'new_playlist.html')

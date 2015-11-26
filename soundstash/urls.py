@@ -23,6 +23,7 @@ import user_session.views
 from . import views
 
 urlpatterns = [
+    url(r'^new_playlist.html/$', library.views.create_playlist_view),
     url(r'^library_json/', include('library_json.urls')),
     url(r'^login/$', user_session.views.login),
     url(r'^logout/$', user_session.views.logout),
