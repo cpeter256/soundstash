@@ -1,0 +1,67 @@
+-*-org-*-
+* Task listing
+
+** As a user, I want to be able to add songs so that I can grow my music collection
+   1. create UI for adding songs (2 hr)
+   2. communicate song metadata & url to database (2 hr)
+   3. persist song creation in database (2 hr)
+
+** As a user, I want to be able to delete songs so that I can curate my music collection
+   1. implement UI for deleting songs (2 hr)
+   2. communicate which song to delete to database (3 hr)
+   3. persist song deletion in database (2 hr)
+
+** As a user, I want to be able to use playlists so that I can organize my songs
+   1. configure database/schema to support storage of playlists (2 days)
+   2. create UI for selecting a playlist to view  (2 hr)
+   3. create UI for creating a playlist (2 hr)
+   4. create UI for deleting a playlist (2 hr)
+   5. persist playlist creation in database (20 min)
+   6. persist playlist deletion in database (20 min)
+   7. delete all songs on a playlist when playlist is deleted (30 min)
+
+** As a developer, I want to be able to extrapolate metadata from a given URL so that the user will hae a more streamlined/magical experience when adding new songs to their collection
+   1. implement a webscraper for youtube links (2 days)
+   2. integrate webscraper into add-song logic (1.5 hrs)
+
+** As a user, I want to be able to log in to my SoundStash account so that I can interact with my personal songs
+   1. create user login page (2 hr)
+   3. implement user login function (4 hr)
+
+** As a user, I want to be able to log out of my SoundStash account so that I can ensure only I have access to my personal song collection
+   1. create UI for logging out (2 hr)
+   2. implement user logout function (4 hr)
+
+** As a developer, I want to be able to have user registration so that new users can use my service
+   1. create user registration page (1 day)
+   2. adjust database schema to support having users (2 days)
+   3. persist users in database (1 day)
+
+* Team roles
+  - Colin (Team member)
+  - Graham (Team member)
+  - Justin (Product Owner)
+  - Jyotsna (Scrum master)
+  - Rene (Team member)
+    
+* Initial task assignments
+** Colin
+   communicate song metadata & url to database
+   
+** Graham
+   implement a webscraper for youtube links
+
+** Justin
+   adjust database schema to support having users
+   
+** Jyotsna
+   configure database/schema to support storage of playlists
+   
+** Rene
+   create UI for adding songs
+
+* Scrum meetings
+  The times are the same...
+  - Tu 6:15
+  - Th 2:00
+  - F 12:10

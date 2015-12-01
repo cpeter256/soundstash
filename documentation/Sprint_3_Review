@@ -1,0 +1,21 @@
+Sound Stash - The Latecomers - Sprint 3 Review
+==============================================
+
+Justin Ewing
+Graham Culver
+Colin Peter
+Jyotsna Prakash
+Rene Isais
+
+Postmortem
+==========
+We investigated and implemented user accounts/login, so that now the library contents are unique to each user. Users can now login, logout, and register.
+
+The product now allows users to have multiple playlists. We edited the UI to allow for addition and deletion of both songs and playlists.
+
+Retrospective
+=============
+Overall this sprint went well. We accomplished the majority of the tasks that we discussed during the last sprint, when we pivoted. With our improved efforts and new goals for our product overall, we did not find that anything in our workflow was not working.
+
+We did find that slack was a good way for us to keep in touch with the group as a whole and individuals, both for logistical questions (eg when's the next meeting?) and technical discussions.
+

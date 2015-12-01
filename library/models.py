@@ -36,10 +36,10 @@ class Playlist(models.Model):
         self.slug = slug = slugify(self.name)
 
         for x in itertools.count(1):
-            if not Playlist.objects.filter(slug=self.slug).exists():
+            if not Playlist.objects.filter(owner=self.owner,slug=self.slug).exists():
                 break
             self.slug = '%s-%d' % (slug, x)
         super(Playlist, self).save(*args, **kwargs)
 
     class Meta:
-        unique_together = ('name','owner')
+        unique_together = ('name','owner',)
