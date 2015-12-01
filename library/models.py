@@ -33,12 +33,13 @@ class Playlist(models.Model):
         return "%s playlist (owned by %s)" % (self.name, self.owner)
 
     def save(self, *args, **kwargs):
-        self.slug = slug = slugify(self.name)
+        if not self.id:
+            self.slug = slug = slugify(self.name)
 
-        for x in itertools.count(1):
-            if not Playlist.objects.filter(owner=self.owner,slug=self.slug).exists():
-                break
-            self.slug = '%s-%d' % (slug, x)
+            for x in itertools.count(1):
+                if not Playlist.objects.filter(owner=self.owner,slug=self.slug).exists():
+                    break
+                self.slug = '%s-%d' % (slug, x)
         super(Playlist, self).save(*args, **kwargs)
 
     class Meta:
