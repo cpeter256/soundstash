@@ -113,19 +113,7 @@
         </div>
       </div>
     </div><!-- end New Sound modal -->
-    <div align="left"><!--Playlist Drop down-->
-      <div class="btn-group btn-group-sm" >
-        <button type="button" class="btn dropdown-toggle" id="playlist-btn" data-toggle="dropdown">
-          <span>Playlists</span>
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <a href="/new_playlist.html">New Playlist</a>
-          <div class="list-group" id="list_group">
-          </div>
-        </ul>
-      </div>
-    </div><!--Playlist drop down end-->
+    
     <div class="row">
       <div class="col-xs-2 col-md-4">
         <div align="right">
@@ -133,6 +121,19 @@
             New Sound
           </button>
         </div>
+        <div align="right"><!--Playlist Drop down-->
+          <div class="btn-group btn-group-sm">
+            <button type="button" class="btn dropdown-toggle" id="playlist-btn" data-toggle="dropdown">
+              <span>Playlists</span>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <div class="text-center"> <a href="/new_playlist.html">New Playlist</a> </div>
+              <div class="list-group text-center" id="list_group">
+              </div>
+            </ul>
+          </div>
+        </div><!--Playlist drop down end-->
       </div>
       <div class="col-xs-8 col-md-4 text-center">
         {% if current_playlist1 != 'default' %}
